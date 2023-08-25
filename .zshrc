@@ -27,6 +27,11 @@ eval "$(rtx activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
+unalias run-help
+autoload run-help
+HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
+alias help=run-help
+
 # zprof
 # unsetopt XTRACE
 # exec 2>&3 3>&-

@@ -12,6 +12,7 @@ export HOMEBREW_REPOSITORY="/opt/homebrew";
 export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
+export HELPDIR="$HOMEBREW_PREFIX/share/zsh/help";
 
 export PATH="$HOME/bin:\
 $HOME/.docker/bin:\
