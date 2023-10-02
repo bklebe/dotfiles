@@ -26,3 +26,6 @@ export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$HOMEBREW_PREFIX/opt/unixodbc/lib"
 export KERL_CONFIGURE_OPTIONS="--with-odbc=$HOMEBREW_PREFIX/opt/unixodbc"
 export KERL_BUILD_DOCS=yes
 export KERL_DOC_TARGETS="man html pdf chunks"
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
