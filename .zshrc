@@ -11,8 +11,7 @@
 
 # setopt XTRACE
 
-if type brew > /dev/null 2>&1
-then
+if type brew >/dev/null 2>&1; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
@@ -35,6 +34,7 @@ alias help=run-help
 alias gmake="op run -- gmake"
 
 alias terraform="op run -- terraform"
+
 # zprof
 # unsetopt XTRACE
 # exec 2>&3 3>&-
