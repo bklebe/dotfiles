@@ -32,6 +32,9 @@ autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
 
+alias gmake="op run -- gmake"
+
+alias terraform="op run -- terraform"
 # zprof
 # unsetopt XTRACE
 # exec 2>&3 3>&-
