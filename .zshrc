@@ -39,3 +39,16 @@ alias terraform="op run -- terraform"
 # unsetopt XTRACE
 # exec 2>&3 3>&-
 source ~/.config/op/plugins.sh
+
+function tfp() {
+  # Capture the output of the terraform plan command with the supplied flags
+  local output
+  output=$(terraform plan -no-color "$@" | awk '/Terraform will perform the following actions:/, /Plan:/ { print }')
+
+  # Print the output to the terminal
+  echo "$output"
+
+  # Copy the output to macOS clipboard
+  echo "$output" | pbcopy
+  echo "The plan has been copied to the clipboard."
+}
