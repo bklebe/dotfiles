@@ -14,7 +14,7 @@ export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
 export HELPDIR="$HOMEBREW_PREFIX/share/zsh/help";
 
-export PATH="$HOME/bin:\
+export PATH="$HOME/.local/share/rtx/shims:$HOME/bin:\
 $HOME/.docker/bin:\
 $HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:\
 $PATH:\
