@@ -20,6 +20,9 @@ $HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:\
 $PATH:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
+export AWS_ACCESS_KEY_ID=op://Development/AWS/credentials/access_key_id
+export AWS_SECRET_ACCESS_KEY=op://Development/AWS/credentials/secret_access_key
+
 
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$HOMEBREW_PREFIX/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$HOMEBREW_PREFIX/opt/unixodbc/lib"

@@ -43,7 +43,7 @@ source ~/.config/op/plugins.sh
 function tfp() {
   # Capture the output of the terraform plan command with the supplied flags
   local output
-  output=$(terraform plan -no-color "$@" | awk '/Terraform will perform the following actions:/, /Plan:/ { print }')
+  output=$(terraform plan -no-color "$@" | awk '/Terraform (planned the following actions, but then encountered a problem:|will perform the following actions:)/, /Plan:/ { print }')
 
   # Print the output to the terminal
   echo "$output"
