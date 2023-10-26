@@ -9,14 +9,13 @@ export EDITOR="code --wait"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$HOME/.local/share/rtx/shims:$HOME/bin:\
-$HOME/.docker/bin:\
 $HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:\
+$HOME/.config/emacs/bin:\
 $PATH:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 export AWS_ACCESS_KEY_ID=op://Development/AWS/credentials/access_key_id
 export AWS_SECRET_ACCESS_KEY=op://Development/AWS/credentials/secret_access_key
-
 
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$HOMEBREW_PREFIX/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$HOMEBREW_PREFIX/opt/unixodbc/lib"
