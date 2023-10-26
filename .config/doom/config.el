@@ -79,6 +79,8 @@
 (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
           projectile-project-root-files-bottom-up)))
 
+(undefine-key! "C-<wheel-up>" "C-<wheel-down>")
+
 (use-package! auth-source-1password
   :demand t
   :init
