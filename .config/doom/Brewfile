@@ -1,0 +1,5 @@
+tap "jimeh/emacs-builds"
+brew "gh"
+brew "git"
+brew "ripgrep"
+cask "emacs-app-pretest"
