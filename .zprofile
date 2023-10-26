@@ -6,13 +6,7 @@
 export EDITOR="code --wait"
 
 # Set PATH, MANPATH, etc., for Homebrew.
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
-export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
-export HELPDIR="$HOMEBREW_PREFIX/share/zsh/help";
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$HOME/.local/share/rtx/shims:$HOME/bin:\
 $HOME/.docker/bin:\
