@@ -1,4 +1,9 @@
 *
 !.gitignore
-!.zshenv
-!.zshrc
+
+!/.zprofile
+!/.zshrc
+
+!/.config/
+!/.config/doom/
+!/.config/doom/**
