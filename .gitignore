@@ -7,3 +7,5 @@
 !/.config/
 !/.config/doom/
 !/.config/doom/**
+!/.config/git/
+!/.config/git/ignore
