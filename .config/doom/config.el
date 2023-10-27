@@ -80,14 +80,3 @@
           projectile-project-root-files-bottom-up)))
 
 (undefine-key! "C-<wheel-up>" "C-<wheel-down>")
-
-(use-package! auth-source-1password
-  :demand t
-  :init
-  (message "Enabling 1Password...")
-  :config
-  (defun construct-stripped (_backend _type host _user _port)
-    (mapconcat #'identity (list auth-source-1password-vault host "bklebe") "/"))
-  (setq auth-source-1password-vault "Private"
-        auth-source-1password-construct-secret-reference 'construct-stripped)
-  (auth-source-1password-enable))
