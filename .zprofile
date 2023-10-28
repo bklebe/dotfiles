@@ -8,6 +8,9 @@ export EDITOR="code --wait"
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
+
 export PATH="$HOME/.local/share/rtx/shims:$HOME/bin:\
 $HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:\
 $HOME/.config/emacs/bin:\
