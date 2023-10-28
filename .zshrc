@@ -18,6 +18,8 @@ if type brew >/dev/null 2>&1; then
   compinit
 fi
 
+. "$(pack completion --shell zsh)"
+
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
