@@ -8,12 +8,12 @@ brew bundle
 ```
 ### install doom
 ```shell
-git clone https://github.com/hlissner/doom-emacs ~/.config/emacs
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ```
 
-### doom sync
+### doom install
 ```shell
-~/.config/emacs/bin/doom sync
+~/.config/emacs/bin/doom install
 ```
 
 ### add doom tools to PATH
