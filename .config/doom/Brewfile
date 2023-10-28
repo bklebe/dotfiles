@@ -1,4 +1,6 @@
 tap "jimeh/emacs-builds"
+brew "coreutils"
+brew "fd"
 brew "gh"
 brew "git"
 brew "ripgrep"
