@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "jimeh/emacs-builds": {
-        "revision": "e728df35878d854c796d195e83070e56fbf72928"
+        "revision": "f00d1efed1560e87a6b8d6868e222bcee7086e8d"
       }
     },
     "brew": {
@@ -274,7 +274,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.1.17",
+        "HOMEBREW_VERSION": "4.1.18-19-g0a6c521",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.0.0.0.1.1694021235",
