@@ -3,7 +3,7 @@
 # shellcheck source=~/.cargo/env
 . "$HOME/.cargo/env"
 
-export EDITOR="code --wait"
+export EDITOR="emacs --no-window-system"
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
