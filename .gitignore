@@ -1,11 +1,27 @@
+# ignore everything
 *
+
+!*.json
+!*.md
+
 !.gitignore
 
-!/.zprofile
-!/.zshrc
+# except zsh startup scripts
+!.zlogin
+!.zprofile
+!.zshenv
+!.zshrc
+
+# except `brew bundle` files in subdirectories
+!/*/**/Brewfile
+!/*/**/Brewfile.lock.json
 
 !/.config/
+
 !/.config/doom/
-!/.config/doom/**
+
+# except Doom configuration
+!/.config/doom/**/*.el
+
 !/.config/git/
 !/.config/git/ignore
