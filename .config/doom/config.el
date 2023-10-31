@@ -95,3 +95,6 @@
 
 (after! code-review
   (setq! code-review-auth-login-marker 'forge))
+
+(after! lsp-mode
+  (setq! lsp-elixir-ls-version "0.17.5"))
