@@ -13,8 +13,8 @@
 !.zshrc
 
 # except `brew bundle` files in subdirectories
-!/*/**/Brewfile
-!/*/**/Brewfile.lock.json
+!Brewfile
+!Brewfile.lock.json
 
 !/.config/
 
