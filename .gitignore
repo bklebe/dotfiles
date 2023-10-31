@@ -3,6 +3,7 @@
 
 !*.json
 !*.md
+!*.nix
 
 !.gitignore
 
@@ -25,3 +26,7 @@
 
 !/.config/git/
 !/.config/git/ignore
+
+!/.config/nix-darwin/
+!/.config/nix-darwin/flake.nix
+!/.config/nix-darwin/flake.lock
