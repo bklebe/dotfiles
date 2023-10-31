@@ -54,3 +54,8 @@ function tfp() {
   echo "$output" | pbcopy
   echo "The plan has been copied to the clipboard."
 }
+
+HB_CNF_HANDLER="$(brew --prefix)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [ -f "$HB_CNF_HANDLER" ]; then
+  source "$HB_CNF_HANDLER";
+fi
