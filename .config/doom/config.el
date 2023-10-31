@@ -91,5 +91,7 @@
          '(("~/mbta" . 1)
            ("~/Projects" . 1))))
 
+(use-package! consult-gh :defer)
+
 (after! code-review
   (setq! code-review-auth-login-marker 'forge))
