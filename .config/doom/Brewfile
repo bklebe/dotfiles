@@ -4,5 +4,8 @@ brew "fd"
 brew "gh"
 brew "git"
 brew "grep"
+brew "grip"
 brew "ripgrep"
+brew "shfmt"
 cask "emacs-app-pretest"
+# brew "d12frosted/emacs-plus/emacs-plus@29", args: ["with-ctags", "with-dbus", "with-mailutils", "with-xwidgets", "with-imagemagick", "with-native-comp", "with-poll"]
