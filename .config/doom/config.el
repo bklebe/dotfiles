@@ -29,7 +29,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-(setq doom-font (font-spec :family "Consolas Nerd Font" :size 14))
+(setq doom-font (font-spec :family "Consolas" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -76,8 +76,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
-          projectile-project-root-files-bottom-up)))
+(after! projectile (setq projectile-project-root-files-bottom-up
+                         (remove ".git" projectile-project-root-files-bottom-up)))
 
 (undefine-key! "C-<wheel-up>" "C-<wheel-down>")
 
