@@ -80,3 +80,10 @@
           projectile-project-root-files-bottom-up)))
 
 (undefine-key! "C-<wheel-up>" "C-<wheel-down>")
+
+(use-package! magit
+  :defer t
+  :init
+  (setq! magit-repository-directories
+         '(("~/mbta" . 1)
+           ("~/Projects" . 1))))
