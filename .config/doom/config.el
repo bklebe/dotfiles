@@ -76,8 +76,9 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! projectile (setq projectile-project-root-files-bottom-up
-                         (remove ".git" projectile-project-root-files-bottom-up)))
+(after! projectile
+  (setq! projectile-project-root-files-bottom-up
+         (remove ".git" projectile-project-root-files-bottom-up)))
 
 (undefine-key! "C-<wheel-up>" "C-<wheel-down>")
 
