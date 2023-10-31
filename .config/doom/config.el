@@ -82,8 +82,13 @@
 (undefine-key! "C-<wheel-up>" "C-<wheel-down>")
 
 (use-package! magit
-  :defer t
+  :defer
+  :bind
+  ("C-c r" . code-review-forge-pr-at-point)
   :init
   (setq! magit-repository-directories
          '(("~/mbta" . 1)
            ("~/Projects" . 1))))
+
+(after! code-review
+  (setq! code-review-auth-login-marker 'forge))
