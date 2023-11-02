@@ -49,3 +49,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
                                         ;(unpin! t)
 (package! consult-gh)
+(package! lsp-mode :pin "9fe1ed4")
