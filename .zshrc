@@ -27,7 +27,6 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
 alias emacs="emacsclient --alternate-editor='open -a Emacs.app' --create-frame --no-wait"
 
-eval "$(rtx activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
