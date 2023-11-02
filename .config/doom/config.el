@@ -96,7 +96,11 @@
 (after! code-review
   (setq! code-review-auth-login-marker 'forge))
 
-(after! lsp-mode
-  (setq! lsp-elixir-ls-version "0.17.5"))
-
 (setq! all-the-icons-scale-factor 1.1)
+
+(setq! projectile-project-root-functions
+       '(projectile-root-local
+         projectile-root-marked
+         projectile-root-top-down
+         projectile-root-bottom-up
+         projectile-root-top-down-recurring))
