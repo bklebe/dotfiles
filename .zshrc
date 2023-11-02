@@ -18,6 +18,8 @@ if type brew >/dev/null 2>&1; then
   compinit
 fi
 
+source <(jj util completion --zsh)
+
 . "$(pack completion --shell zsh)"
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
