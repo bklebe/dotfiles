@@ -43,6 +43,8 @@ alias terraform="op run -- terraform"
 # exec 2>&3 3>&-
 source ~/.config/op/plugins.sh
 
+alias sl="CHGDISABLE=1 sl"
+
 function tfp() {
   # Capture the output of the terraform plan command with the supplied flags
   local output
