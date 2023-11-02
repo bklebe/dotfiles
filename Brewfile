@@ -1,4 +1,3 @@
-tap "jimeh/emacs-builds"
 brew "coreutils"
 brew "fd"
 brew "gh"
@@ -7,5 +6,5 @@ brew "grep"
 brew "grip"
 brew "ripgrep"
 brew "shfmt"
-cask "emacs-app-pretest"
-# brew "d12frosted/emacs-plus/emacs-plus@29", args: ["with-ctags", "with-dbus", "with-mailutils", "with-xwidgets", "with-imagemagick", "with-native-comp", "with-poll"]
+tap "d12frosted/emacs-plus"
+brew "emacs-plus@29", args: ["with-ctags", "with-dbus", "with-mailutils", "with-xwidgets", "with-imagemagick", "with-native-comp", "with-poll"]
