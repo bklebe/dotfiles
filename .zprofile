@@ -3,7 +3,11 @@
 # shellcheck source=~/.cargo/env
 . "$HOME/.cargo/env"
 
-export EDITOR="emacs --no-window-system"
+emacs="emacsclient --alternate-editor='open -a Emacs.app' --create-frame --no-wait"
+
+alias emacs=$emacs
+
+export EDITOR=$emacs
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
