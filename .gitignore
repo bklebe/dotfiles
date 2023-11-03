@@ -4,6 +4,7 @@
 !*.json
 !*.md
 !*.nix
+!*.yml
 
 !.gitignore
 
@@ -16,6 +17,9 @@
 # except `brew bundle` files in subdirectories
 !Brewfile
 !Brewfile.lock.json
+
+!/.github/
+!/.github/workflows/
 
 !/.config/
 
