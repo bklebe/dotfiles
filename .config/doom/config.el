@@ -104,3 +104,13 @@
          projectile-root-top-down
          projectile-root-bottom-up
          projectile-root-top-down-recurring))
+
+(use-package! super-save
+  :config  
+  (setq! super-save-idle-duration 0.1)
+  (setq! super-save-auto-save-when-idle t)
+  (super-save-mode +1))
+
+(use-package! ws-butler
+  :config
+  (setq! ws-butler-keep-whitespace-before-point t))

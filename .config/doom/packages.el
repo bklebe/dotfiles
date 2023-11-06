@@ -50,3 +50,4 @@
                                         ;(unpin! t)
 (package! consult-gh)
 (package! lsp-mode :pin "9fe1ed4")
+(package! super-save :pin "6f6512")
