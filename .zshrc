@@ -63,4 +63,4 @@ if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER"
 fi
 
-eval "$(devbox global shellenv)"
+# eval "$(devbox global shellenv)"
