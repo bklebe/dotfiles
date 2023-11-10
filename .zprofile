@@ -12,15 +12,15 @@ alias emacs="$EDITOR --no-wait"
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 prefix=$(brew --prefix)
+alias ibrew="/usr/local/bin/brew"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
-export PATH="$HOME/.local/share/rtx/shims:$HOME/bin:\
+export PATH="$PATH:$HOME/.local/share/rtx/shims:$HOME/bin:\
 $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
 $XDG_CONFIG_HOME/emacs/bin:\
-$PATH:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 export AWS_ACCESS_KEY_ID=op://Development/AWS/credentials/access_key_id

@@ -58,6 +58,17 @@ function tfp() {
   echo "The plan has been copied to the clipboard."
 }
 
+izsh() {
+  local old_path=$PATH
+  export PATH=/usr/local/bin:$PATH
+  arch -x86_64 zsh
+  export PATH=$old_path
+}
+
+wine-gptk() {
+  WINEESYNC=1 WINEPREFIX=~/game-prefix $(/usr/local/bin/brew --prefix game-porting-toolkit)/bin/wine64 "$@"
+}
+
 HB_CNF_HANDLER="$(brew --prefix)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER"
