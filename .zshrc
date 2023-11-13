@@ -11,10 +11,6 @@
 
 eval "$(direnv hook zsh)"
 
-source <(jj util completion --zsh)
-
-. "$(pack completion --shell zsh)"
-
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 if type brew >/dev/null 2>&1; then
@@ -23,6 +19,10 @@ if type brew >/dev/null 2>&1; then
   autoload -Uz compinit
   compinit
 fi
+
+source <(jj util completion --zsh)
+
+. "$(pack completion --shell zsh)"
 
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
 
