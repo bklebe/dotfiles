@@ -7,8 +7,6 @@ export EDITOR="emacsclient --alternate-editor='emacs' --create-frame"
 
 alias emacs="$EDITOR --no-wait"
 
-
-
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 prefix=$(brew --prefix)
@@ -34,3 +32,8 @@ export KERL_DOC_TARGETS="man html pdf chunks"
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+HB_CNF_HANDLER="$prefix/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [ -f "$HB_CNF_HANDLER" ]; then
+    source "$HB_CNF_HANDLER"
+fi

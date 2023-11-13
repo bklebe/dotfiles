@@ -3,13 +3,19 @@
 # zmodload zsh/zprof
 # zmodload zsh/datetime
 # setopt PROMPT_SUBST
+# setopt XTRACE
 # PS4='+$EPOCHREALTIME %N:%i> '
-
 # logfile=$(mktemp zsh_profile.XXXXXXXX)
 # echo "Logging to $logfile"
 # exec 3>&2 2>"$logfile"
 
-# setopt XTRACE
+eval "$(direnv hook zsh)"
+
+source <(jj util completion --zsh)
+
+. "$(pack completion --shell zsh)"
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 if type brew >/dev/null 2>&1; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
@@ -18,30 +24,18 @@ if type brew >/dev/null 2>&1; then
   compinit
 fi
 
-source <(jj util completion --zsh)
-
-. "$(pack completion --shell zsh)"
-
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
-
-eval "$(direnv hook zsh)"
-eval "$(starship init zsh)"
 
 unalias run-help
 autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
 
+source $HOME/.config/op/plugins.sh
+
 alias gmake="op run -- gmake"
 
 alias terraform="op run -- terraform"
-
-# zprof
-# unsetopt XTRACE
-# exec 2>&3 3>&-
-source ~/.config/op/plugins.sh
 
 alias sl="CHGDISABLE=1 sl"
 
@@ -69,9 +63,10 @@ wine-gptk() {
   WINEESYNC=1 WINEPREFIX=~/game-prefix $(/usr/local/bin/brew --prefix game-porting-toolkit)/bin/wine64 "$@"
 }
 
-HB_CNF_HANDLER="$(brew --prefix)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-if [ -f "$HB_CNF_HANDLER" ]; then
-  source "$HB_CNF_HANDLER"
-fi
-
 # eval "$(devbox global shellenv)"
+
+eval "$(starship init zsh)"
+
+# zprof
+# unsetopt XTRACE
+# exec 2>&3 3>&-
