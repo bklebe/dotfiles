@@ -37,10 +37,6 @@ alias gmake="op run -- gmake"
 
 alias terraform="op run -- terraform"
 
-# cuz sapling is broken, see: https://github.com/facebook/sapling/issues/757
-# TODO remove this once it's fixed
-export CHGDISABLE=1
-
 function tfp() {
   # Capture the output of the terraform plan command with the supplied flags
   local output
