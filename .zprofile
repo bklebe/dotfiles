@@ -15,11 +15,14 @@ alias ibrew="/usr/local/bin/brew"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
-export PATH="$PATH:$HOME/.local/share/rtx/shims:$HOME/bin:\
+export PATH="\
+$HOME/.local/share/rtx/shims:\
+$HOME/bin:\
 $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
 $XDG_CONFIG_HOME/emacs/bin:\
-$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+$HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
+$PATH"
 
 export AWS_ACCESS_KEY_ID=op://Development/AWS/credentials/access_key_id
 export AWS_SECRET_ACCESS_KEY=op://Development/AWS/credentials/secret_access_key
