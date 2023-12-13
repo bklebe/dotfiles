@@ -31,6 +31,9 @@
 !/.config/git/
 !/.config/git/ignore
 
+!/.config/powershell/
+!/.config/powershell/Microsoft.PowerShell_profile.ps1
+
 !/.config/nix-darwin/
 !/.config/nix-darwin/flake.nix
 !/.config/nix-darwin/flake.lock
