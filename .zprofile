@@ -16,7 +16,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 export PATH="\
-$HOME/.local/share/rtx/shims:\
 $HOME/bin:\
 $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
