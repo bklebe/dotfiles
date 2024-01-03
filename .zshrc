@@ -33,7 +33,7 @@ alias help=run-help
 
 source $HOME/.config/op/plugins.sh
 
-alias gmake="op run -- gmake"
+alias make="op run -- make"
 
 alias terraform="op run -- terraform"
 
