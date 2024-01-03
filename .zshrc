@@ -10,6 +10,7 @@
 # exec 3>&2 2>"$logfile"
 
 eval "$(direnv hook zsh)"
+eval "$(mise activate zsh)"
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
