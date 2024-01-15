@@ -8,12 +8,6 @@
 
 !.gitignore
 
-# except zsh startup scripts
-!.zlogin
-!.zprofile
-!.zshenv
-!.zshrc
-
 # except `brew bundle` files in subdirectories
 !Brewfile
 !Brewfile.lock.json
@@ -31,9 +25,18 @@
 !/.config/git/
 !/.config/git/ignore
 
-!/.config/powershell/
-!/.config/powershell/Microsoft.PowerShell_profile.ps1
-
 !/.config/nix-darwin/
 !/.config/nix-darwin/flake.nix
 !/.config/nix-darwin/flake.lock
+
+!/.config/powershell/
+!/.config/powershell/Microsoft.PowerShell_profile.ps1
+
+!/.config/python/
+!/.config/python/pythonrc
+
+!/.config/zsh/
+!/.config/zsh/.zshenv
+!/.config/zsh/.zprofile
+!/.config/zsh/.zshrc
+!/.config/zsh/.zlogin

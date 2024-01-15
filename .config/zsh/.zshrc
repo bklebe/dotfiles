@@ -12,18 +12,21 @@
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
 
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 if type brew >/dev/null 2>&1; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
-  compinit
+  compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
 fi
 
 source <(jj util completion --zsh)
 
 . "$(pack completion --shell zsh)"
+
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
 

@@ -1,7 +1,6 @@
 # shellcheck shell=sh
 
-# shellcheck source=~/.cargo/env
-. "$HOME/.cargo/env"
+. "$XDG_DATA_HOME"/cargo/env
 
 export EDITOR="emacsclient --alternate-editor='emacs' --create-frame"
 
