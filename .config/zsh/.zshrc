@@ -62,7 +62,7 @@ izsh() {
 }
 
 wine-gptk() {
-  WINEESYNC=1 WINEPREFIX=~/game-prefix $(/usr/local/bin/brew --prefix game-porting-toolkit)/bin/wine64 "$@"
+  WINEESYNC=1 WINEPREFIX=~/game-prefix "$(/usr/local/bin/brew --prefix game-porting-toolkit)"/bin/wine64 "$@"
 }
 
 # eval "$(devbox global shellenv)"
