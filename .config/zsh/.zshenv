@@ -58,4 +58,3 @@ export STACK_ROOT="$XDG_DATA_HOME"/stack
 export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
-. "/Users/ada/.local/share/cargo/env"
