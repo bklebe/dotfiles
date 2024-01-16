@@ -25,6 +25,10 @@
 !/.config/git/
 !/.config/git/ignore
 
+!/.config/mise/
+!/.config/mise/config.toml
+!/.config/mise/settings.toml
+
 !/.config/nix-darwin/
 !/.config/nix-darwin/flake.nix
 !/.config/nix-darwin/flake.lock
