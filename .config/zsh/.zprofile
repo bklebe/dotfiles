@@ -16,6 +16,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 export PATH="\
 $HOME/bin:\
+$HOME/.local/bin:\
 $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
 $XDG_CONFIG_HOME/emacs/bin:\

@@ -19,12 +19,12 @@ if type brew >/dev/null 2>&1; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
-  compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
+  compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 fi
 
-source <(jj util completion --zsh)
+source <(jj util completion zsh)
 
-. "$(pack completion --shell zsh)"
+# . "$(pack completion --shell zsh)"
 
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 

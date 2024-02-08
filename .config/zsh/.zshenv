@@ -23,6 +23,8 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GHCUP_USE_XDG_DIRS=true
 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+GPG_TTY=$(tty)
+export GPG_TTY
 
 export GOPATH="$XDG_DATA_HOME"/go
 
