@@ -1,6 +1,6 @@
 [tools]
 go = "1.21.3"
-python = "3.12.1"
+python = "3.12.2"
 poetry = "1.7.1"
 elixir = "1.16.1-otp-26"
 erlang = "26.2.1"
