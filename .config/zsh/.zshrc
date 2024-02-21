@@ -9,7 +9,6 @@
 # echo "Logging to $logfile"
 # exec 3>&2 2>"$logfile"
 
-eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
 
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
@@ -69,6 +68,7 @@ wine-gptk() {
 # eval "$(devbox global shellenv)"
 
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 # zprof
 # unsetopt XTRACE

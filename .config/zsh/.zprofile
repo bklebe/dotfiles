@@ -23,8 +23,8 @@ $XDG_CONFIG_HOME/emacs/bin:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
 $PATH"
 
-export AWS_ACCESS_KEY_ID=op://Development/AWS/credentials/access_key_id
-export AWS_SECRET_ACCESS_KEY=op://Development/AWS/credentials/secret_access_key
+export AWS_ACCESS_KEY_ID="op://Private/tv6emkuxmewujdu7w5i4lfms7u/access key id"
+export AWS_SECRET_ACCESS_KEY="op://Private/tv6emkuxmewujdu7w5i4lfms7u/secret access key"
 
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$prefix/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$prefix/opt/unixodbc/lib"
