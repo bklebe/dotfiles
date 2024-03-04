@@ -33,7 +33,7 @@ export KERL_BUILD_DOCS=yes
 export KERL_DOC_TARGETS="man html pdf chunks"
 
 # Added by OrbStack: command-line tools and integration
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+# source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 HB_CNF_HANDLER="$prefix/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
