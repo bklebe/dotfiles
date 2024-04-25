@@ -33,11 +33,6 @@ autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
 
-source $HOME/.config/op/plugins.sh
-
-alias make="op run -- make"
-
-alias terraform="op run -- terraform"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 function tfp() {

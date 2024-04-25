@@ -24,9 +24,6 @@ $HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
 /Applications/gg.app/Contents/MacOS/:\
 $PATH"
 
-export AWS_ACCESS_KEY_ID="op://Private/tv6emkuxmewujdu7w5i4lfms7u/access key id"
-export AWS_SECRET_ACCESS_KEY="op://Private/tv6emkuxmewujdu7w5i4lfms7u/secret access key"
-
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$prefix/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$prefix/opt/unixodbc/lib"
 export KERL_CONFIGURE_OPTIONS="--with-odbc=$prefix/opt/unixodbc --with-ssl=$prefix/opt/openssl@3"
