@@ -21,6 +21,7 @@ $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
 $XDG_CONFIG_HOME/emacs/bin:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
+/Applications/gg.app/Contents/MacOS/:\
 $PATH"
 
 export AWS_ACCESS_KEY_ID="op://Private/tv6emkuxmewujdu7w5i4lfms7u/access key id"

@@ -19,9 +19,8 @@ if type brew >/dev/null 2>&1; then
 
   autoload -Uz compinit
   compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+  source <(jj util completion zsh)
 fi
-
-source <(jj util completion zsh)
 
 # . "$(pack completion --shell zsh)"
 
@@ -65,10 +64,22 @@ wine-gptk() {
   WINEESYNC=1 WINEPREFIX=~/game-prefix "$(/usr/local/bin/brew --prefix game-porting-toolkit)"/bin/wine64 "$@"
 }
 
+function zipdiff() { diff -W200 -y <(unzip -vql "$1" | sort -k8) <(unzip -vql "$2" | sort -k8); }
+function zipcdiff() {
+  A='{printf("%8sB %s %s\n",$1,$7,$8)}'
+  diff <(unzip -vqql "$1" | awk "$A" | sort -k3) <(unzip -vqql "$2" | awk "$A" | sort -k3)
+}
+
 # eval "$(devbox global shellenv)"
 
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+
+bindkey "\e[1;3D" backward-word     # ⌥←
+bindkey "\e[1;3C" forward-word      # ⌥→
+bindkey "^[[1;9D" beginning-of-line # ⌘+←
+bindkey "^[[1;9C" end-of-line       # ⌘+→
+
 
 # zprof
 # unsetopt XTRACE
