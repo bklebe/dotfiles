@@ -19,12 +19,13 @@ if type brew >/dev/null 2>&1; then
 
   autoload -Uz compinit
   compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
-  source <(jj util completion zsh)
+  . <(jj util completion zsh)
 fi
+
 
 # . "$(pack completion --shell zsh)"
 
-alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+alias svn='svn --config-dir $XDG_CONFIG_HOME/subversion'
 
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
 
@@ -33,7 +34,7 @@ autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
 
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 
 function tfp() {
   # Capture the output of the terraform plan command with the supplied flags

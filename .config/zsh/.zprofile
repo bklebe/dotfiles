@@ -2,9 +2,9 @@
 
 . "$XDG_DATA_HOME"/cargo/env
 
-export EDITOR="emacsclient --alternate-editor='emacs' --create-frame"
+export EDITOR="emacsclient --alternate-editor=emacs --create-frame"
 
-alias emacs="$EDITOR --no-wait"
+alias emacs='$EDITOR --no-wait'
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -35,5 +35,5 @@ export KERL_DOC_TARGETS="html chunks"
 
 HB_CNF_HANDLER="$prefix/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
-    source "$HB_CNF_HANDLER"
+    . "$HB_CNF_HANDLER"
 fi
