@@ -15,7 +15,7 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 if type brew >/dev/null 2>&1; then
-  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+  FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
   compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"

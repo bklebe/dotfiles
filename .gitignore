@@ -44,3 +44,5 @@
 !/.config/zsh/.zprofile
 !/.config/zsh/.zshrc
 !/.config/zsh/.zlogin
+!/.config/zsh/functions/
+!/.config/zsh/functions/*
