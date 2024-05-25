@@ -8,7 +8,7 @@ java = "22.0.0"
 terraform = "1.4.2"
 perl = "5.38.2"
 shellcheck = "0.10.0"
-usage = "latest"
+usage = "0.3.0"
 "pipx:erikbern/git-of-theseus" = "latest"
 node = "22.0.0"
 

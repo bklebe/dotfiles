@@ -17,7 +17,9 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 if type brew >/dev/null 2>&1; then
   FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
-  autoload -Uz compinit
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+  complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
   compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
   . <(jj util completion zsh)
 fi
