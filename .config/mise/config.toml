@@ -11,6 +11,8 @@ shellcheck = "0.10.0"
 usage = "0.3.0"
 "pipx:erikbern/git-of-theseus" = "latest"
 node = "22.0.0"
+"cargo:cargo-binstall" = "1.6.9"
+"cargo:diffedit3" = "0.4.0"
 
 [settings]
 experimental = true
