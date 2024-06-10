@@ -2,7 +2,7 @@
 go = "1.21.3"
 python = "3.12.3"
 poetry = "1.7.1"
-elixir = "1.16.3-otp-26"
+elixir = "1.17.0-rc.1-otp-27"
 erlang = "27.0"
 java = "22.0.0"
 terraform = "1.4.2"
