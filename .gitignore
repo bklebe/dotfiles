@@ -4,7 +4,7 @@
 !*.json
 !*.md
 !*.nix
-!devenv.lock
+!flake.lock
 !.envrc
 !*.yml
 !*.yaml
