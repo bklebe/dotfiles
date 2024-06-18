@@ -78,6 +78,13 @@ uninstall_nix_darwin() {
   sudo mv /etc/ssl/certs/ca-certificates.crt.before-nix-darwin /etc/ssl/certs/ca-certificates.crt
 }
 
+install_nix_darwin() {
+  sudo mv -f /etc/bashrc /etc/bashrc.before-nix-darwin
+  sudo mv -f /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
+  sudo mv -f /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt.before-nix-darwin
+  nix --experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin
+}
+
 # eval "$(devbox global shellenv)"
 
 eval "$(starship init zsh)"
