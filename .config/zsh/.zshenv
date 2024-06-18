@@ -6,6 +6,8 @@ export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_RUNTIME_DIR="$HOME"/Library/Caches/TemporaryItems
 
+export DIRENV_LOG_FORMAT=
+
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
