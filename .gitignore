@@ -62,3 +62,4 @@ devenv.local.nix
 
 !nickel.lock.ncl
 !project.ncl
+!flake.lock
