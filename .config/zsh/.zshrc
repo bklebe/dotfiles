@@ -71,6 +71,9 @@ zipcdiff() {
 uninstall_nix_darwin() {
   nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
   sudo mv /etc/bashrc.before-nix-darwin /etc/bashrc
+  sudo mv /etc/zshrc.before-nix-darwin /etc/zshrc
+  sudo mv /etc/zshenv.before-nix-darwin /etc/zshenv
+  sudo mv /etc/zprofile.before-nix-darwin /etc/zprofile
   sudo mv /etc/nix/nix.conf.before-nix-darwin /etc/nix/nix.conf
   sudo mv /etc/ssl/certs/ca-certificates.crt.before-nix-darwin /etc/ssl/certs/ca-certificates.crt
 }
