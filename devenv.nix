@@ -10,7 +10,6 @@
     pkgs.awscli2
     pkgs.chezmoi
     pkgs.colima
-    pkgs.direnv
     pkgs.docker
     pkgs.docker-buildx
     pkgs.docker-compose
@@ -18,8 +17,6 @@
     pkgs.git
     pkgs.graphviz
     pkgs.jq
-    pkgs.jujutsu
-    pkgs.mise
     pkgs.mosquitto
     pkgs.nixfmt-rfc-style
     pkgs.pandoc
