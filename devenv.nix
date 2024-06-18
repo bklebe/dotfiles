@@ -1,0 +1,51 @@
+{ pkgs, lib, config, inputs, ... }:
+
+{
+  cachix.enable = false;
+
+  # https://devenv.sh/packages/
+  packages = [
+    pkgs.awscli2
+    pkgs.chezmoi
+    pkgs.colima
+    pkgs.direnv
+    pkgs.docker
+    pkgs.docker-buildx
+    pkgs.docker-compose
+    pkgs.gh
+    pkgs.git
+    pkgs.graphviz
+    pkgs.jq
+    pkgs.jujutsu
+    pkgs.mise
+    pkgs.mosquitto
+    pkgs.nixfmt-rfc-style
+    pkgs.pandoc
+    pkgs.protobuf
+    pkgs.ripgrep
+    pkgs.rustup
+    pkgs.scc
+    pkgs.shfmt
+  ];
+
+  enterShell = ''
+  '';
+
+  # https://devenv.sh/tests/
+  enterTest = ''
+  '';
+
+  # https://devenv.sh/services/
+  # services.postgres.enable = true;
+
+  # https://devenv.sh/languages/
+  # languages.nix.enable = true;
+
+  # https://devenv.sh/pre-commit-hooks/
+  # pre-commit.hooks.shellcheck.enable = true;
+
+  # https://devenv.sh/processes/
+  # processes.ping.exec = "ping example.com";
+
+  # See full reference at https://devenv.sh/reference/options/
+}
