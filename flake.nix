@@ -31,7 +31,29 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = [ pkgs.hello ];
+                  packages = [
+                    pkgs.awscli2
+                    pkgs.chezmoi
+                    pkgs.colima
+                    pkgs.direnv
+                    pkgs.docker
+                    pkgs.docker-buildx
+                    pkgs.docker-compose
+                    pkgs.gh
+                    pkgs.git
+                    pkgs.graphviz
+                    pkgs.jq
+                    pkgs.jujutsu
+                    pkgs.mise
+                    pkgs.mosquitto
+                    pkgs.nixfmt-rfc-style
+                    pkgs.pandoc
+                    pkgs.protobuf
+                    pkgs.ripgrep
+                    pkgs.rustup
+                    pkgs.scc
+                    pkgs.shfmt
+                  ];
 
                   enterShell = ''
                   '';
