@@ -4,7 +4,10 @@
 !*.json
 !*.md
 !*.nix
+!devenv.lock
+!.envrc
 !*.yml
+!*.yaml
 
 !.gitignore
 
@@ -46,3 +49,12 @@
 !/.config/zsh/.zlogin
 !/.config/zsh/functions/
 !/.config/zsh/functions/*
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
