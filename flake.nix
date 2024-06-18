@@ -34,10 +34,7 @@
                   packages = [ pkgs.hello ];
 
                   enterShell = ''
-                    hello
                   '';
-
-                  processes.hello.exec = "hello";
                 }
               ];
             };
