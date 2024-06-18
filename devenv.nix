@@ -1,6 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
+  cachix.enable = false;
   # https://devenv.sh/basics/
 
   # https://devenv.sh/packages/
