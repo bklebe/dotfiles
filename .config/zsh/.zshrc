@@ -38,7 +38,7 @@ alias help=run-help
 
 alias wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 
-function tfp() {
+tfp() {
   # Capture the output of the terraform plan command with the supplied flags
   local output
   output=$(terraform plan -no-color "$@" | awk '/Terraform (planned the following actions, but then encountered a problem:|will perform the following actions:)/, /Plan:/ { print }')
@@ -58,14 +58,21 @@ izsh() {
   export PATH=$old_path
 }
 
-wine-gptk() {
+wine_gptk() {
   WINEESYNC=1 WINEPREFIX=~/game-prefix "$(/usr/local/bin/brew --prefix game-porting-toolkit)"/bin/wine64 "$@"
 }
 
-function zipdiff() { diff -W200 -y <(unzip -vql "$1" | sort -k8) <(unzip -vql "$2" | sort -k8); }
-function zipcdiff() {
+zipdiff() { diff -W200 -y <(unzip -vql "$1" | sort -k8) <(unzip -vql "$2" | sort -k8); }
+zipcdiff() {
   A='{printf("%8sB %s %s\n",$1,$7,$8)}'
   diff <(unzip -vqql "$1" | awk "$A" | sort -k3) <(unzip -vqql "$2" | awk "$A" | sort -k3)
+}
+
+uninstall_nix_darwin() {
+  nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
+  sudo mv /etc/bashrc.before-nix-darwin /etc/bashrc
+  sudo mv /etc/nix/nix.conf.before-nix-darwin /etc/nix/nix.conf
+  sudo mv /etc/ssl/certs/ca-certificates.crt.before-nix-darwin /etc/ssl/certs/ca-certificates.crt
 }
 
 # eval "$(devbox global shellenv)"
