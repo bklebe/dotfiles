@@ -4,7 +4,6 @@
 !*.json
 !*.md
 !*.nix
-!flake.lock
 !.envrc
 !*.yml
 !*.yaml
@@ -52,15 +51,8 @@
 # Devenv
 .devenv*
 devenv.local.nix
-
-# direnv
-.direnv
-
-# pre-commit
-.pre-commit-config.yaml
-# Devenv
-.devenv*
-devenv.local.nix
+!devenv.nix
+!devenv.lock
 
 # direnv
 .direnv
