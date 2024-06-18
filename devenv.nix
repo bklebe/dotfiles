@@ -18,12 +18,14 @@
     pkgs.graphviz
     pkgs.jq
     pkgs.mosquitto
+    pkgs.nil
     pkgs.nixfmt-rfc-style
     pkgs.pandoc
     pkgs.protobuf
     pkgs.ripgrep
     pkgs.rustup
     pkgs.scc
+    pkgs.shellcheck
     pkgs.shfmt
   ];
 
