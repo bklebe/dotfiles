@@ -1,7 +1,7 @@
 [tools]
 go = "1.21.3"
 python = "3.12.3"
-poetry = "1.7.1"
+poetry = "1.8.3"
 elixir = "1.17.1-otp-27"
 erlang = "27.0"
 java = "liberica-javafx-22.0.1+10"
