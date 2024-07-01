@@ -1,28 +1,20 @@
 # shellcheck shell=sh
 
 # zmodload zsh/zprof
-# zmodload zsh/datetime
-# setopt PROMPT_SUBST
-# setopt XTRACE
-# PS4='+$EPOCHREALTIME %N:%i> '
-# logfile=$(mktemp zsh_profile.XXXXXXXX)
-# echo "Logging to $logfile"
-# exec 3>&2 2>"$logfile"
 
 eval "$(mise activate zsh)"
 
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-if type brew >/dev/null 2>&1; then
-  FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+# if type brew >/dev/null 2>&1; then
+#   FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
-  autoload bashcompinit && bashcompinit
-  autoload -Uz compinit && compinit
-  complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
-  compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
-  . <(jj util completion zsh)
-fi
+#   autoload bashcompinit && bashcompinit
+#   autoload -Uz compinit && compinit
+#   complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
+#   . <(jj util completion zsh)
+# fi
 
 
 # . "$(pack completion --shell zsh)"
@@ -90,12 +82,4 @@ install_nix_darwin() {
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
-bindkey "\e[1;3D" backward-word     # ⌥←
-bindkey "\e[1;3C" forward-word      # ⌥→
-bindkey "^[[1;9D" beginning-of-line # ⌘+←
-bindkey "^[[1;9C" end-of-line       # ⌘+→
-
-
 # zprof
-# unsetopt XTRACE
-# exec 2>&3 3>&-
