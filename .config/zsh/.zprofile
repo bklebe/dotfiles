@@ -2,9 +2,7 @@
 
 . "$XDG_DATA_HOME"/cargo/env
 
-export EDITOR="emacsclient --alternate-editor=emacs --create-frame"
-
-alias emacs='$EDITOR --no-wait'
+export EDITOR="code --new-window --wait"
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -30,10 +28,11 @@ export KERL_CONFIGURE_OPTIONS="--with-odbc=$prefix/opt/unixodbc --with-ssl=$pref
 export KERL_BUILD_DOCS=yes
 export KERL_DOC_TARGETS="html chunks"
 
-# Added by OrbStack: command-line tools and integration
-# source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
 HB_CNF_HANDLER="$prefix/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
     . "$HB_CNF_HANDLER"
 fi
+
+# Added by OrbStack: command-line tools and integration
+# Comment this line if you don't want it to be added again.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
