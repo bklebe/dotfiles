@@ -1,0 +1,5 @@
+macos-option-as-alt = left
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+font-family = "PragmataPro Mono"
+font-size = 14

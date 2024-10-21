@@ -24,6 +24,9 @@
 # except Doom configuration
 !/.config/doom/**/*.el
 
+!/.config/ghostty/
+!/.config/ghostty/config
+
 !/.config/git/
 !/.config/git/ignore
 
