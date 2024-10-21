@@ -15,12 +15,16 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=true
 export PATH="\
 $HOME/bin:\
 $HOME/.local/bin:\
+$prefix/opt/libpq/bin:\
 $prefix/opt/grep/libexec/gnubin:\
 $prefix/opt/python@3.11/libexec/bin:\
+$HOME/Library/Application Support/Coursier/bin:\
 $XDG_CONFIG_HOME/emacs/bin:\
 $HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
 /Applications/gg.app/Contents/MacOS/:\
 $PATH"
+
+. $ZDOTDIR/.zprofile-local
 
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$prefix/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$prefix/opt/unixodbc/lib"
