@@ -29,7 +29,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-(setq doom-font (font-spec :family "Consolas" :size 14))
+(setq doom-font (font-spec :family "PragmataPro" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -88,8 +88,8 @@
   ("C-c r" . code-review-forge-pr-at-point)
   :init
   (setq! magit-repository-directories
-         '(("~/mbta" . 1)
-           ("~/Projects" . 1))))
+         '(("~/swiftly" . 1)
+           ("~/projects" . 1))))
 
 (use-package! consult-gh :defer)
 
@@ -106,7 +106,7 @@
          projectile-root-top-down-recurring))
 
 (use-package! super-save
-  :config  
+  :config
   (setq! super-save-idle-duration 0.1)
   (setq! super-save-auto-save-when-idle t)
   (super-save-mode +1))
