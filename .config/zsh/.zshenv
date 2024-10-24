@@ -12,9 +12,6 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
-
 export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
 export CABAL_DIR="$XDG_DATA_HOME"/cabal
 

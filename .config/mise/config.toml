@@ -3,15 +3,16 @@ go = "1.21.3"
 poetry = "1.8.3"
 elixir = "1.17.2-otp-27"
 erlang = "27.0"
-java = "liberica-javafx-22.0.1+10"
 terraform = "1.4.2"
-shellcheck = "0.10.0"
 "pipx:erikbern/git-of-theseus" = "latest"
 node = "22.7.0"
 "cargo:cargo-binstall" = "1.6.9"
 "cargo:diffedit3" = "0.4.0"
 python = "3.13.0"
 usage = "0.3.0"
+java = "zulu-23.30.13"
+shellcheck = "0.10.0"
+spring-boot = "3.3.5"
 
 [settings]
 experimental = true
