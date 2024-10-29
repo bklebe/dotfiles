@@ -24,7 +24,9 @@ $HOME/Library/Application Support/JetBrains/Toolbox/scripts:\
 /Applications/gg.app/Contents/MacOS/:\
 $PATH"
 
-. $ZDOTDIR/.zprofile-local
+if [ -f "$ZDOTDIR"/.zprofile-local ]; then
+    . "$ZDOTDIR"/.zprofile-local
+fi
 
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$prefix/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$prefix/opt/unixodbc/lib"
