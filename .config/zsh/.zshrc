@@ -2,7 +2,7 @@
 
 zmodload zsh/zprof
 
-# eval "$(mise activate zsh)"
+eval "$(mise activate zsh)"
 
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
