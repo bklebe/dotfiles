@@ -4,9 +4,6 @@ zmodload zsh/zprof
 
 eval "$(mise activate zsh)"
 
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-
 if type brew >/dev/null 2>&1; then
   FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
@@ -15,6 +12,9 @@ if type brew >/dev/null 2>&1; then
   complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
   . <(jj util completion zsh)
 fi
+
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 
 # . "$(pack completion --shell zsh)"
