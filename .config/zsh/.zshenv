@@ -4,7 +4,9 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_CACHE_HOME="$HOME"/.cache
-export XDG_RUNTIME_DIR="$HOME"/Library/Caches/TemporaryItems
+XDG_RUNTIME_DIR="$HOME"/Library/Caches/TemporaryItems
+mkdir -p $XDG_RUNTIME_DIR
+export XDG_RUNTIME_DIR
 
 export DIRENV_LOG_FORMAT=
 
