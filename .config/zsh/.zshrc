@@ -22,6 +22,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 alias svn='svn --config-dir $XDG_CONFIG_HOME/subversion'
 
 alias gtfs="curl https://cdn.mbta.com/MBTA_GTFS.zip --output gtfs.zip"
+alias ssh="TERM=xterm-256color ssh"
 
 unalias run-help
 autoload run-help
