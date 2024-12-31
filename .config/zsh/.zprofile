@@ -28,6 +28,7 @@ if [ -f "$ZDOTDIR"/.zprofile-local ]; then
     . "$ZDOTDIR"/.zprofile-local
 fi
 
+export LC_ALL=en_US.UTF-8
 export CPPFLAGS="${CPPFLAGS+"$CPPFLAGS "}-I$prefix/opt/unixodbc/include"
 export LDFLAGS="${LDFLAGS+"$LDFLAGS "}-L$prefix/opt/unixodbc/lib"
 export KERL_CONFIGURE_OPTIONS="--with-odbc=$prefix/opt/unixodbc --with-ssl=$prefix/opt/openssl@3"
