@@ -7,3 +7,6 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 scrollback-limit = 1_000_000_000
+auto-update = download
+auto-update-channel = stable
+command = /opt/homebrew/bin/fish
