@@ -12,10 +12,11 @@ python = "3.13.0"
 usage = "1.7.4"
 java = "corretto-23.0.1.8.1"
 shellcheck = "0.10.0"
-spring-boot = "3.3.5"
+spring-boot = "3.4.1"
 gradle = "8.10.2"
 maven = "3.9.9"
 ruby = "3.4.1"
+quarkus = "3.17.6"
 
 [settings]
 experimental = true
