@@ -51,6 +51,9 @@
 !/.config/zsh/.zlogin
 !/.config/zsh/functions/
 !/.config/zsh/functions/*
+
+!/.config/fish/
+!/.config/fish/config.fish
 # Devenv
 .devenv*
 devenv.local.nix
