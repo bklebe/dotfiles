@@ -12,6 +12,8 @@ set -gx GRADLE_USER_HOME "$XDG_DATA_HOME"/gradle
 
 fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 fish_add_path "$HOME/Library/Application Support/Coursier/bin"
+fish_add_path "$HOME/.local/share/cargo/bin"
+
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
