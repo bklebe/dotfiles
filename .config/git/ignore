@@ -152,3 +152,5 @@ fabric.properties
 *.msm
 *.msp
 *.txz
+
+**/.claude/settings.local.json

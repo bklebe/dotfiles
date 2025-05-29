@@ -1,7 +1,5 @@
 # shellcheck shell=sh
 
-. "$XDG_DATA_HOME"/cargo/env
-
 export EDITOR="code --new-window --wait"
 
 # Set PATH, MANPATH, etc., for Homebrew.

@@ -2,6 +2,7 @@
 go = "1.24.0"
 elixir = "1.18.3-otp-27"
 erlang = "27.3"
+python = "3.13.3"
 java = "temurin-21.0.6+7.0.LTS"
 shellcheck = "0.10.0"
 spring-boot = "3.4.2"
