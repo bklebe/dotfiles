@@ -8,5 +8,5 @@ font-feature = -liga
 font-feature = -dlig
 scrollback-limit = 1_000_000_000
 auto-update = download
-auto-update-channel = stable
+auto-update-channel = tip
 command = /opt/homebrew/bin/fish
