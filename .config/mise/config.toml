@@ -7,7 +7,7 @@ java = "temurin-21.0.6+7.0.LTS"
 shellcheck = "0.10.0"
 spring-boot = "3.4.2"
 maven = "3.9.9"
-uv = "0.6.1"
+uv = "latest"
 node = "24.3.0"
 gradle = "8.13.0"
 
