@@ -18,3 +18,5 @@ fish_add_path "$HOME/.local/share/cargo/bin"
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+direnv hook fish | source
