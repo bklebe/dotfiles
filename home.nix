@@ -105,8 +105,8 @@
   programs.home-manager.enable = true;
   programs.nushell = {
     enable = true;
-    configFile.source = xdg-config/nushell/config.nu;
     envFile.text = "source ${config.xdg.configHome}/nushell/nix.nu";
+    configFile.source = xdg-config/nushell/config.nu;
   };
 
   programs.mise = {
