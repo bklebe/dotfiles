@@ -66,7 +66,8 @@
       scrollback-limit = 1_000_000_000
       auto-update = download
       auto-update-channel = tip
-      command = ${pkgs.nushell}/bin/nu --config ~/.config/nushell/config.nu
+      env = XDG_CONFIG_HOME=${config.xdg.configHome}
+      command = ${pkgs.nushell}/bin/nu
       keybind = shift+enter=text:\n
     '';
     "mise".source = xdg-config/mise;
@@ -105,5 +106,11 @@
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
+    envFile.text = "source ${config.xdg.configHome}/nushell/nix.nu";
+  };
+
+  programs.mise = {
+    enable = true;
+    enableNushellIntegration = true;
   };
 }
