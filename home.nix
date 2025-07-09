@@ -43,7 +43,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-
+    ".zshenv".source = dotfiles/zsh/.zshenv;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -52,12 +52,20 @@
   };
 
   xdg.configFile = {
+    "doom".source = xdg-config/doom;
+    "fish/config.fish".source = xdg-config/fish/config.fish;
     "ghostty/config".source = xdg-config/ghostty/config;
     "mise".source = xdg-config/mise;
     "nushell" = {
       source = xdg-config/nushell;
       recursive = true;
     };
+    "powershell".source = xdg-config/powershell;
+    "python".source = xdg-config/python;
+    "zsh" = {
+      source = xdg-config/zsh;
+      recursive = true;
+    }
   };
 
   # Home Manager can also manage your environment variables through
