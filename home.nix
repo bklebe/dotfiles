@@ -72,6 +72,7 @@
     '';
     "mise".source = xdg-config/mise;
     "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
+    "nushell/mise.nu".source = xdg-config/nushell/mise.nu;
     "powershell".source = xdg-config/powershell;
     "python".source = xdg-config/python;
     "zsh" = {
@@ -111,6 +112,6 @@
 
   programs.mise = {
     enable = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
   };
 }
