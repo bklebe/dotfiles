@@ -17,7 +17,8 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 use std/util "path add"
-source ~/.config/nushell/nix.nu
+source nix.nu
+use mise.nu
 
 def path_helper [dir] {
     ls $dir | select name | each { |f| open $f.name | split row "\n" } | flatten
@@ -36,4 +37,3 @@ if ($env.MANPATH | str starts-with ":" | not $in) {
 
 $env.INFOPATH = $"($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)"
 $env.config.buffer_editor = "code"
-use ($nu.default-config-dir | path join mise.nu)
