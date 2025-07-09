@@ -66,7 +66,7 @@
       scrollback-limit = 1_000_000_000
       auto-update = download
       auto-update-channel = tip
-      command = ${pkgs.nushell} --config ~/.config/nushell/config.nu
+      command = ${pkgs.nushell}/bin/nu --config ~/.config/nushell/config.nu
       keybind = shift+enter=text:\n
     '';
     "mise".source = xdg-config/mise;
