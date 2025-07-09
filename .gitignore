@@ -32,10 +32,6 @@
 !/.config/git/
 !/.config/git/ignore
 
-!/.config/mise/
-!/.config/mise/config.toml
-!/.config/mise/settings.toml
-
 !/.config/nix-darwin/
 !/.config/nix-darwin/flake.nix
 !/.config/nix-darwin/flake.lock
@@ -63,6 +59,13 @@
 !/.config/home-manager/flake.nix
 !/.config/home-manager/flake.lock
 !/.config/home-manager/home.nix
+!/.config/home-manager/xdg-config/
+!/.config/home-manager/xdg-config/mise/
+!/.config/home-manager/xdg-config/mise/config.toml
+!/.config/home-manager/xdg-config/mise/settings.toml
+!/.config/home-manager/xdg-config/nushell/
+!/.config/home-manager/xdg-config/nushell/config.nu
+!/.config/home-manager/xdg-config/nushell/nix.nu
 # Devenv
 .devenv*
 devenv.local.nix
