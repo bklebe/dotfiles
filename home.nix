@@ -127,4 +127,9 @@
     enable = true;
     enableNushellIntegration = false;
   };
+
+  programs.direnv = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 }
