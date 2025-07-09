@@ -23,7 +23,9 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
-        extraSpecialArgs = {user = "ada";};
+        extraSpecialArgs = {
+          user = "ada";
+        };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
@@ -33,8 +35,9 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
-        extraSpecialArgs = {user = "beatrix";};
-
+        extraSpecialArgs = {
+          user = "beatrix";
+        };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
