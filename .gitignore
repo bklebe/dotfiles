@@ -59,6 +59,10 @@
 !/.config/nushell/
 !/.config/nushell/config.nu
 !/.config/nushell/nix.nu
+!/.config/home-manager/
+!/.config/home-manager/flake.nix
+!/.config/home-manager/flake.lock
+!/.config/home-manager/home.nix
 # Devenv
 .devenv*
 devenv.local.nix
