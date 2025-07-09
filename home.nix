@@ -54,19 +54,31 @@
   xdg.configFile = {
     "doom".source = xdg-config/doom;
     "fish/config.fish".source = xdg-config/fish/config.fish;
-    "ghostty/config".source = xdg-config/ghostty/config;
+    "ghostty/config".text = ''
+      macos-option-as-alt = left
+      keybind = alt+left=esc:b
+      keybind = alt+right=esc:f
+      font-family = "PragmataPro Mono"
+      font-size = 14
+      font-feature = -calt
+      font-feature = -liga
+      font-feature = -dlig
+      scrollback-limit = 1_000_000_000
+      auto-update = download
+      auto-update-channel = tip
+      command = ${pkgs.nushell} --config ~/.config/nushell/config.nu
+      keybind = shift+enter=text:\n
+    '';
     "mise".source = xdg-config/mise;
-    "nushell" = {
-      source = xdg-config/nushell;
-      recursive = true;
-    };
+    "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
     "powershell".source = xdg-config/powershell;
     "python".source = xdg-config/python;
     "zsh" = {
       source = xdg-config/zsh;
       recursive = true;
-    }
+    };
   };
+  xdg.enable = true;
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -90,4 +102,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.nushell = {
+    enable = true;
+    configFile.source = xdg-config/nushell/config.nu;
+  };
 }

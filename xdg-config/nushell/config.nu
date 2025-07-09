@@ -36,4 +36,4 @@ if ($env.MANPATH | str starts-with ":" | not $in) {
 $env.INFOPATH = $"($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)"
 $env.config.buffer_editor = "code"
 
-source nix.nu
+source ~/.config/nushell/nix.nu
