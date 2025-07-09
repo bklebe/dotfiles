@@ -52,6 +52,7 @@
   };
 
   xdg.configFile = {
+    "ghostty/config".source = xdg-config/ghostty/config;
     "mise".source = xdg-config/mise;
     "nushell" = {
       source = xdg-config/nushell;
