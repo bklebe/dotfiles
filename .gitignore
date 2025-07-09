@@ -58,6 +58,7 @@
 !/.config/fish/config.fish
 !/.config/nushell/
 !/.config/nushell/config.nu
+!/.config/nushell/nix.nu
 # Devenv
 .devenv*
 devenv.local.nix
