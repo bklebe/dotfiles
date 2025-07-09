@@ -24,6 +24,8 @@
   # environment.
   home.packages = [
     pkgs.nixfmt-tree
+    pkgs.nixd
+    pkgs.nil
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
