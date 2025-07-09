@@ -1,12 +1,12 @@
 use std/util "path add"
 
 let nix_link_new = if "XDG_STATE_HOME" in $env {
-    $env.XDG_STATE_HOME | path join ".nix-profile"
+    $env.XDG_STATE_HOME | path join "nix/profile"
 } else {
     $env.HOME | path join ".local/state/nix/profile"
 }
 
- let nix_link = if ($nix_link_new | path exists) {
+let nix_link = if ($nix_link_new | path exists) {
     $nix_link_new
 } else {
     $env.HOME | path join ".nix-profile"

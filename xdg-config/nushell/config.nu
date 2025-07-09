@@ -17,6 +17,7 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 use std/util "path add"
+source ~/.config/nushell/nix.nu
 
 def path_helper [dir] {
     ls $dir | select name | each { |f| open $f.name | split row "\n" } | flatten

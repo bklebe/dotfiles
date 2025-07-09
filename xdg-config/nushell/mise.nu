@@ -22,15 +22,15 @@ export def --env --wrapped main [command?: string, --help, ...rest: string] {
   let commands = ["deactivate", "shell", "sh"]
 
   if ($command == null) {
-    ^"/Users/beatrix/.nix-profile/bin/mise"
+    ^"/Users/beatrix/.local/state/nix/profile/bin/mise"
   } else if ($command == "activate") {
     $env.MISE_SHELL = "nu"
   } else if ($command in $commands) {
-    ^"/Users/beatrix/.nix-profile/bin/mise" $command ...$rest
+    ^"/Users/beatrix/.local/state/nix/profile/bin/mise" $command ...$rest
     | parse vars
     | update-env
   } else {
-    ^"/Users/beatrix/.nix-profile/bin/mise" $command ...$rest
+    ^"/Users/beatrix/.local/state/nix/profile/bin/mise" $command ...$rest
   }
 }
 
@@ -49,7 +49,8 @@ def --env "update-env" [] {
 }
 
 def --env mise_hook [] {
-  ^"/Users/beatrix/.nix-profile/bin/mise" hook-env -s nu
+  ^"/Users/beatrix/.local/state/nix/profile/bin/mise" hook-env -s nu
     | parse vars
     | update-env
 }
+

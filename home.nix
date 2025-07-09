@@ -78,6 +78,9 @@
       auto-update = download
       auto-update-channel = tip
       env = XDG_CONFIG_HOME=${config.xdg.configHome}
+      env = XDG_DATA_HOME=${config.xdg.dataHome}
+      env = XDG_CACHE_HOME=${config.xdg.cacheHome}
+      env = XDG_STATE_HOME=${config.xdg.stateHome}
       command = ${pkgs.nushell}/bin/nu
       keybind = shift+enter=text:\n
     '';
@@ -117,7 +120,6 @@
   programs.home-manager.enable = true;
   programs.nushell = {
     enable = true;
-    envFile.text = "source ${config.xdg.configHome}/nushell/nix.nu";
     configFile.source = xdg-config/nushell/config.nu;
   };
 
