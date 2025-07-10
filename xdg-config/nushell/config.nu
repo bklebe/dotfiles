@@ -37,3 +37,4 @@ if ($env.MANPATH | str starts-with ":" | not $in) {
 
 $env.INFOPATH = $"($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)"
 $env.config.buffer_editor = "code"
+$env.GRADLE_USER_HOME = $env.XDG_DATA_HOME | path join "gradle"
