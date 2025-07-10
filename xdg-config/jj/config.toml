@@ -1,0 +1,11 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+[user]
+name = "Beatrix Klebe"
+
+
+[ui]
+# diff-editor = ["ksdiff", "--wait", "$left", "--no-snapshot", "$right", "--no-snapshot"]
+# merge-editor = ["ksdiff", "--merge", "--output", "$output", "--base", "$base", "$left", "$right"]
+
+[merge-tools.ksdiff]
+diff-args = ["$left", "$right"]

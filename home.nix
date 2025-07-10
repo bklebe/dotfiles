@@ -132,4 +132,9 @@
     enable = true;
     enableNushellIntegration = true;
   };
+  programs.jujutsu = {
+    enable = true;
+  };
+  home.file.".config/jj/config.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/jj-private/config.toml";
 }
