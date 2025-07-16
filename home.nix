@@ -2,6 +2,8 @@
   config,
   pkgs,
   user,
+  userPackages,
+  extraNushellConfig,
   ...
 }:
 
@@ -22,10 +24,12 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = userPackages ++ [
     pkgs.nixfmt-tree
     pkgs.nixd
     pkgs.nil
+    pkgs.scc
+    pkgs.rustup
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -121,6 +125,7 @@
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
+    extraConfig = extraNushellConfig;
   };
 
   programs.mise = {
@@ -133,6 +138,12 @@
     enableNushellIntegration = true;
   };
   programs.jujutsu = {
+    enable = true;
+  };
+  programs.ripgrep = {
+    enable = true;
+  };
+  programs.awscli = {
     enable = true;
   };
   home.file.".config/jj/config.toml".source =

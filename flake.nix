@@ -37,6 +37,8 @@
         modules = [ ./home.nix ];
         extraSpecialArgs = {
           user = "beatrix";
+          userPackages = [ pkgs.coursier ];
+          extraNushellConfig = "path add '~/Library/Application Support/Coursier/bin'";
         };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
