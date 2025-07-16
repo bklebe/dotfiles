@@ -11,7 +11,11 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -31,13 +35,14 @@
       };
       homeConfigurations."beatrix" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
         extraSpecialArgs = {
           user = "beatrix";
-          userPackages = [ pkgs.coursier ];
+          userPackages = [
+            pkgs.coursier
+          ];
           extraNushellConfig = "path add '~/Library/Application Support/Coursier/bin'";
         };
         # Optionally use extraSpecialArgs

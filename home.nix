@@ -22,6 +22,23 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      protoc-gen-grpc-java = prev.protoc-gen-grpc-java.overrideAttrs (
+        oldAttrs:
+        let
+          baseInputs = oldAttrs.nativeBuildInputs or [ ];
+        in
+        {
+          nativeBuildInputs =
+            if prev.stdenv.isDarwin then
+              builtins.filter (dep: dep != prev.autoPatchelfHook) baseInputs
+            else
+              baseInputs;
+        }
+      );
+    })
+  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = userPackages ++ [
@@ -30,6 +47,7 @@
     pkgs.nil
     pkgs.scc
     pkgs.rustup
+    pkgs.protoc-gen-grpc-java
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -146,6 +164,4 @@
   programs.awscli = {
     enable = true;
   };
-  home.file.".config/jj/config.toml".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/jj-private/config.toml";
 }
