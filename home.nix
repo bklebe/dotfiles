@@ -55,15 +55,15 @@ in
       "1password-cli"
     ];
   home.packages = userPackages ++ [
-    pkgs.nixfmt-tree
-    pkgs.nixd
-    pkgs.nil
-    pkgs.scc
-    pkgs.rustup
-    pkgs.protoc-gen-grpc-java
     pkgs._1password-cli
     pkgs.gradle
     pkgs.maven
+    pkgs.nil
+    pkgs.nixd
+    pkgs.nixfmt-tree
+    pkgs.protoc-gen-grpc-java
+    pkgs.rustup
+    pkgs.scc
     pkgs.shellcheck
     pkgs.spring-boot-cli
     # # Adds the 'hello' command to your environment. It prints a friendly
