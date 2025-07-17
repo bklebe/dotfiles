@@ -175,7 +175,6 @@ in
         source ${nu-scripts}/custom-completions/uv/uv-completions.nu
         source ${nu-scripts}/custom-completions/vscode/vscode-completions.nu
         source ${nu-scripts}/custom-completions/zellij/zellij-completions.nu
-
       '';
   };
 

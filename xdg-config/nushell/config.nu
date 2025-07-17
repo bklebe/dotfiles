@@ -37,7 +37,7 @@ if ($env.MANPATH | str starts-with ":" | not $in) {
     $env.MANPATH = $":($env.MANPATH)"
 }
 
-let editor = "zed --new"
+let editor = "zed"
 $env.INFOPATH = $"($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)"
 $env.config.buffer_editor = $editor
 $env.GRADLE_USER_HOME = $env.XDG_DATA_HOME | path join "gradle"
