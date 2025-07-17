@@ -20,6 +20,8 @@ use std/util "path add"
 source nix.nu
 use mise.nu
 
+$env.config.show_banner = false
+
 def path_helper [dir] {
     ls $dir | select name | each { |f| open $f.name | split row "\n" } | flatten
 }
