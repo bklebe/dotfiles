@@ -62,6 +62,10 @@ in
     pkgs.rustup
     pkgs.protoc-gen-grpc-java
     pkgs._1password-cli
+    pkgs.gradle
+    pkgs.maven
+    pkgs.shellcheck
+    pkgs.spring-boot-cli
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
