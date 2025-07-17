@@ -56,7 +56,6 @@ in
     ];
   home.packages = userPackages ++ [
     pkgs._1password-cli
-    pkgs.gradle
     pkgs.maven
     pkgs.nil
     pkgs.nixd
@@ -206,5 +205,9 @@ in
   };
   programs.awscli = {
     enable = true;
+  };
+  programs.gradle = {
+    enable = true;
+    home = "${config.xdg.dataHome}/gradle";
   };
 }
