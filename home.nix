@@ -4,6 +4,7 @@
   user,
   userPackages,
   extraNushellConfig,
+  lib,
   ...
 }:
 let
@@ -48,6 +49,11 @@ in
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "1password-cli"
+    ];
   home.packages = userPackages ++ [
     pkgs.nixfmt-tree
     pkgs.nixd
@@ -55,6 +61,7 @@ in
     pkgs.scc
     pkgs.rustup
     pkgs.protoc-gen-grpc-java
+    pkgs._1password-cli
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
