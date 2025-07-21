@@ -30,23 +30,6 @@ in
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      protoc-gen-grpc-java = prev.protoc-gen-grpc-java.overrideAttrs (
-        oldAttrs:
-        let
-          baseInputs = oldAttrs.nativeBuildInputs or [ ];
-        in
-        {
-          nativeBuildInputs =
-            if prev.stdenv.isDarwin then
-              builtins.filter (dep: dep != prev.autoPatchelfHook) baseInputs
-            else
-              baseInputs;
-        }
-      );
-    })
-  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   nixpkgs.config.allowUnfreePredicate =
@@ -77,7 +60,6 @@ in
     pkgs.pandoc
     pkgs.pgformatter
     pkgs.protobuf
-    pkgs.protoc-gen-grpc-java
     pkgs.ruby
     pkgs.rustup
     pkgs.scc

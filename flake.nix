@@ -44,6 +44,19 @@
           user = "beatrix";
           userPackages = [
             pkgs.coursier
+            (pkgs.protoc-gen-grpc-java.overrideAttrs (
+              oldAttrs:
+              let
+                baseInputs = oldAttrs.nativeBuildInputs or [ ];
+              in
+              {
+                nativeBuildInputs =
+                  if pkgs.stdenv.isDarwin then
+                    builtins.filter (dep: dep != pkgs.autoPatchelfHook) baseInputs
+                  else
+                    baseInputs;
+              }
+            ))
           ];
           extraNushellConfig = "path add '~/Library/Application Support/Coursier/bin'";
         };
