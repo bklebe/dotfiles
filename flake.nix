@@ -29,6 +29,8 @@
         modules = [ ./home.nix ];
         extraSpecialArgs = {
           user = "ada";
+          userPackages = [ ];
+          extraNushellConfig = "";
         };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
