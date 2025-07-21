@@ -80,5 +80,4 @@ install_nix_darwin() {
 
 # eval "$(devbox global shellenv)"
 
-eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
