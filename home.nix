@@ -56,15 +56,40 @@ in
     ];
   home.packages = userPackages ++ [
     pkgs._1password-cli
+    pkgs.curl
+    pkgs.cocoapods
+    pkgs.flyctl
+    pkgs.gh
+    pkgs.git
+    pkgs.helix
+    pkgs.hyperfine
+    pkgs.innoextract
+    pkgs.ios-deploy
+    pkgs.jujutsu
+    pkgs.jq
+    pkgs.mas
     pkgs.maven
+    pkgs.ncdu
     pkgs.nil
     pkgs.nixd
     pkgs.nixfmt-tree
+    pkgs.nmap
+    pkgs.pandoc
+    pkgs.pgformatter
+    pkgs.protobuf
     pkgs.protoc-gen-grpc-java
+    pkgs.ruby
     pkgs.rustup
     pkgs.scc
     pkgs.shellcheck
+    pkgs.shfmt
+    pkgs.skaffold
     pkgs.spring-boot-cli
+    pkgs.sqlite
+    pkgs.inetutils
+    pkgs.tcl
+    pkgs.unar
+    pkgs.xdg-ninja
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
