@@ -44,6 +44,7 @@
           user = "beatrix";
           userPackages = [
             pkgs.coursier
+            pkgs.protobuf
             (pkgs.protoc-gen-grpc-java.overrideAttrs (
               oldAttrs:
               let
