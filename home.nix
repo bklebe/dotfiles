@@ -14,6 +14,29 @@ let
     rev = "ba9a4c1caca935b98ad05caad50687be8c2b21cd";
     sha256 = "sha256-p6jRvJ9r3+HEgAZxjxSAC4hXO7MQ+PlPcKZU9Q9vNJ0=";
   };
+  nuCompletions = [
+    "aws"
+    "curl"
+    "docker"
+    "gh"
+    "git"
+    "gradlew"
+    "less"
+    "make"
+    "man"
+    "mix"
+    "mvn"
+    "nix"
+    "npm"
+    "op"
+    "rg"
+    "rustup"
+    "ssh"
+    "tar"
+    "uv"
+    "vscode"
+    "zellij"
+  ];
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -164,29 +187,11 @@ in
     extraConfig =
       extraNushellConfig
       + "\n"
-      + ''
-        source ${nu-scripts}/custom-completions/aws/aws-completions.nu
-        source ${nu-scripts}/custom-completions/curl/curl-completions.nu
-        source ${nu-scripts}/custom-completions/docker/docker-completions.nu
-        source ${nu-scripts}/custom-completions/gh/gh-completions.nu
-        source ${nu-scripts}/custom-completions/git/git-completions.nu
-        source ${nu-scripts}/custom-completions/gradlew/gradlew-completions.nu
-        source ${nu-scripts}/custom-completions/less/less-completions.nu
-        source ${nu-scripts}/custom-completions/make/make-completions.nu
-        source ${nu-scripts}/custom-completions/man/man-completions.nu
-        source ${nu-scripts}/custom-completions/mix/mix-completions.nu
-        source ${nu-scripts}/custom-completions/mvn/mvn-completions.nu
-        source ${nu-scripts}/custom-completions/nix/nix-completions.nu
-        source ${nu-scripts}/custom-completions/npm/npm-completions.nu
-        source ${nu-scripts}/custom-completions/op/op-completions.nu
-        source ${nu-scripts}/custom-completions/rg/rg-completions.nu
-        source ${nu-scripts}/custom-completions/rustup/rustup-completions.nu
-        source ${nu-scripts}/custom-completions/ssh/ssh-completions.nu
-        source ${nu-scripts}/custom-completions/tar/tar-completions.nu
-        source ${nu-scripts}/custom-completions/uv/uv-completions.nu
-        source ${nu-scripts}/custom-completions/vscode/vscode-completions.nu
-        source ${nu-scripts}/custom-completions/zellij/zellij-completions.nu
-      '';
+      + builtins.concatStringsSep "\n" (
+        map (
+          completion: "source ${nu-scripts}/custom-completions/${completion}/${completion}-completions.nu"
+        ) nuCompletions
+      );
   };
 
   programs.mise = {
