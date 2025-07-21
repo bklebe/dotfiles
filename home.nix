@@ -52,6 +52,7 @@ in
     pkgs.nixd
     pkgs.nixfmt-tree
     pkgs.nmap
+    pkgs.ollama
     pkgs.pandoc
     pkgs.pgformatter
     pkgs.rustup
