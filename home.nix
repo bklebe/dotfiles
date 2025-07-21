@@ -39,6 +39,7 @@ in
     ];
   home.packages = userPackages ++ [
     pkgs._1password-cli
+    pkgs.chezmoi
     pkgs.flyctl
     pkgs.gh
     pkgs.hyperfine
