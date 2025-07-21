@@ -47,7 +47,7 @@
             (pkgs.protoc-gen-grpc-java.overrideAttrs (
               oldAttrs:
               let
-                baseInputs = oldAttrs.nativeBuildInputs or [ ];
+                baseInputs = oldAttrs.nativeBuildInputs;
               in
               {
                 nativeBuildInputs =
