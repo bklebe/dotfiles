@@ -45,8 +45,8 @@ in
     pkgs.gh
     pkgs.hyperfine
     pkgs.innoextract
-    pkgs.jujutsu
     pkgs.jq
+    pkgs.jujutsu
     pkgs.mas
     pkgs.maven
     pkgs.ncdu
