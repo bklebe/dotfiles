@@ -140,11 +140,7 @@ in
       scrollback-limit = 1_000_000_000
       auto-update = download
       auto-update-channel = tip
-      env = XDG_CONFIG_HOME=${config.xdg.configHome}
-      env = XDG_DATA_HOME=${config.xdg.dataHome}
-      env = XDG_CACHE_HOME=${config.xdg.cacheHome}
-      env = XDG_STATE_HOME=${config.xdg.stateHome}
-      command = ${pkgs.nushell}/bin/nu
+      command = ${pkgs.bash}/bin/bash --login -c ${pkgs.nushell}/bin/nu
       keybind = shift+enter=text:\n
     '';
     "mise".source = xdg-config/mise;
@@ -181,6 +177,7 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.bash.enable = true;
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
@@ -197,11 +194,13 @@ in
   programs.mise = {
     enable = true;
     enableNushellIntegration = false;
+    enableBashIntegration = false;
   };
 
   programs.direnv = {
     enable = true;
     enableNushellIntegration = true;
+    enableBashIntegration = false;
   };
   programs.jujutsu = {
     enable = true;
