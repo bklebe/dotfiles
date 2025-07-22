@@ -215,4 +215,8 @@ in
     enable = true;
     home = "${config.xdg.dataHome}/gradle";
   };
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 }
