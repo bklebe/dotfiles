@@ -59,6 +59,7 @@ in
     pkg:
     builtins.elem (lib.getName pkg) [
       "1password-cli"
+      "terraform"
     ];
   home.packages = userPackages ++ [
     pkgs._1password-cli
@@ -87,6 +88,7 @@ in
     pkgs.skaffold
     pkgs.spring-boot-cli
     pkgs.sqlite
+    pkgs.terraform
     pkgs.unar
     pkgs.xdg-ninja
     # # Adds the 'hello' command to your environment. It prints a friendly
