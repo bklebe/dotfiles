@@ -81,6 +81,7 @@ in
     pkgs.ollama
     pkgs.pandoc
     pkgs.pgformatter
+    pkgs.quarkus
     pkgs.rustup
     pkgs.scc
     pkgs.shellcheck
