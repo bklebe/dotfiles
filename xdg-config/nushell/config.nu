@@ -31,6 +31,7 @@ $env.HOMEBREW_CELLAR = $"($env.HOMEBREW_PREFIX)/Cellar"
 $env.HOMEBREW_REPOSITORY = "/opt/homebrew"
 $env.path ++= path_helper /etc/paths.d/
 path add $"($env.HOMEBREW_PREFIX)/bin" $"($env.HOMEBREW_PREFIX)/sbin"
+path add $'($env.HOME)/Library/Application Support/JetBrains/Toolbox/scripts'
 
 $env.MANPATH = $"($env.MANPATH?):(path_helper /etc/manpaths.d/ | str join ":")"
 if ($env.MANPATH | str starts-with ":" | not $in) {
