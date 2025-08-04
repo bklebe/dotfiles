@@ -69,6 +69,7 @@ in
     pkgs.gh
     pkgs.hyperfine
     pkgs.innoextract
+    pkgs.jira-cli-go
     pkgs.jq
     pkgs.jujutsu
     pkgs.mas
