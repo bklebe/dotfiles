@@ -44,9 +44,9 @@ $env.config.buffer_editor = $editor
 $env.GRADLE_USER_HOME = $env.XDG_DATA_HOME | path join 'gradle'
 $env.EDITOR = $editor | str join ' '
 
-$env.config = ($env.config
-            | upsert hooks.pre_execution
-    [{
-        condition: {|| commandline | str contains './gradlew'}
-        code: 'alias ./gradlew = echo "Use system gradle instead: gradle"'
-    }])
+# $env.config = ($env.config
+#             | upsert hooks.pre_execution
+#     [{
+#         condition: {|| commandline | str contains './gradlew'}
+#         code: 'alias ./gradlew = echo "Use system gradle instead: gradle"'
+#     }])
