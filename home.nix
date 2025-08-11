@@ -11,8 +11,8 @@ let
   nu-scripts = pkgs.fetchFromGitHub {
     owner = "nushell";
     repo = "nu_scripts";
-    rev = "ba9a4c1caca935b98ad05caad50687be8c2b21cd";
-    sha256 = "sha256-p6jRvJ9r3+HEgAZxjxSAC4hXO7MQ+PlPcKZU9Q9vNJ0=";
+    rev = "main";
+    sha256 = "sha256-0fw0fJSlUnT5vbBHDubqLrk3F+OU7CE15vIeU295C4w=";
   };
   nuCompletions = [
     "aws"

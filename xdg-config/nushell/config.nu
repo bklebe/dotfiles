@@ -50,3 +50,4 @@ $env.EDITOR = $editor | str join ' '
 #         condition: {|| commandline | str contains './gradlew'}
 #         code: 'alias ./gradlew = echo "Use system gradle instead: gradle"'
 #     }])
+source secrets.nu
