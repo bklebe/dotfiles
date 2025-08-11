@@ -79,7 +79,7 @@ in
     pkgs.nixd
     pkgs.nixfmt-tree
     pkgs.nmap
-    pkgs.ollama
+    # pkgs.ollama # (currently broken)
     pkgs.pandoc
     pkgs.pgformatter
     pkgs.quarkus
