@@ -37,6 +37,11 @@ let
     "vscode"
     "zellij"
   ];
+  unfreePackages = [
+    pkgs._1password-cli
+    pkgs.claude-code
+    pkgs.terraform
+  ];
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -56,65 +61,61 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "1password-cli"
-      "terraform"
+    pkg: builtins.elem (lib.getName pkg) (lib.map (p: lib.getName p) unfreePackages);
+  home.packages =
+    userPackages
+    ++ unfreePackages
+    ++ [
+      pkgs.buck2
+      pkgs.chezmoi
+      pkgs.flyctl
+      pkgs.elixir_1_19
+      pkgs.erlang_28
+      pkgs.gh
+      pkgs.hyperfine
+      pkgs.innoextract
+      pkgs.jira-cli-go
+      pkgs.jq
+      pkgs.jujutsu
+      pkgs.mas
+      pkgs.maven
+      pkgs.ncdu
+      pkgs.nil
+      pkgs.nixd
+      pkgs.nixfmt-tree
+      pkgs.nmap
+      pkgs.ollama
+      pkgs.pandoc
+      pkgs.pgformatter
+      pkgs.python314
+      pkgs.quarkus
+      pkgs.rustup
+      pkgs.scc
+      pkgs.shellcheck
+      pkgs.shfmt
+      pkgs.skaffold
+      pkgs.spring-boot-cli
+      pkgs.sqlite
+      pkgs.unar
+      pkgs.uv
+      pkgs.xdg-ninja
+      # # Adds the 'hello' command to your environment. It prints a friendly
+      # # "Hello, world!" when run.
+      # pkgs.hello
+
+      # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # overrides. You can do that directly here, just don't forget the
+      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # # fonts?
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
     ];
-  home.packages = userPackages ++ [
-    pkgs._1password-cli
-    pkgs.buck2
-    pkgs.chezmoi
-    pkgs.claude-code
-    pkgs.flyctl
-    pkgs.elixir_1_19
-    pkgs.erlang_28
-    pkgs.gh
-    pkgs.hyperfine
-    pkgs.innoextract
-    pkgs.jira-cli-go
-    pkgs.jq
-    pkgs.jujutsu
-    pkgs.mas
-    pkgs.maven
-    pkgs.ncdu
-    pkgs.nil
-    pkgs.nixd
-    pkgs.nixfmt-tree
-    pkgs.nmap
-    pkgs.ollama
-    pkgs.pandoc
-    pkgs.pgformatter
-    pkgs.python314
-    pkgs.quarkus
-    pkgs.rustup
-    pkgs.scc
-    pkgs.shellcheck
-    pkgs.shfmt
-    pkgs.skaffold
-    pkgs.spring-boot-cli
-    pkgs.sqlite
-    pkgs.terraform
-    pkgs.unar
-    pkgs.uv
-    pkgs.xdg-ninja
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
