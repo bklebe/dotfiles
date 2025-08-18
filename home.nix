@@ -65,41 +65,41 @@ in
   home.packages =
     userPackages
     ++ unfreePackages
-    ++ [
-      pkgs.buck2
-      pkgs.chezmoi
-      pkgs.flyctl
-      pkgs.elixir_1_19
-      pkgs.erlang_28
-      pkgs.gh
-      pkgs.hyperfine
-      pkgs.innoextract
-      pkgs.jira-cli-go
-      pkgs.jq
-      pkgs.jujutsu
-      pkgs.mas
-      pkgs.maven
-      pkgs.ncdu
-      pkgs.nil
-      pkgs.nixd
-      pkgs.nixfmt-tree
-      pkgs.nmap
-      pkgs.nodejs_24
-      pkgs.ollama
-      pkgs.pandoc
-      pkgs.pgformatter
-      pkgs.python314
-      pkgs.quarkus
-      pkgs.rustup
-      pkgs.scc
-      pkgs.shellcheck
-      pkgs.shfmt
-      pkgs.skaffold
-      pkgs.spring-boot-cli
-      pkgs.sqlite
-      pkgs.unar
-      pkgs.uv
-      pkgs.xdg-ninja
+    ++ (with pkgs; [
+      buck2
+      chezmoi
+      flyctl
+      elixir_1_19
+      erlang_28
+      gh
+      hyperfine
+      innoextract
+      jira-cli-go
+      jq
+      jujutsu
+      mas
+      maven
+      ncdu
+      nil
+      nixd
+      nixfmt-tree
+      nmap
+      nodejs_24
+      ollama
+      pandoc
+      pgformatter
+      python314
+      quarkus
+      rustup
+      scc
+      shellcheck
+      shfmt
+      skaffold
+      spring-boot-cli
+      sqlite
+      unar
+      uv
+      xdg-ninja
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
       # pkgs.hello
@@ -116,7 +116,7 @@ in
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
-    ];
+    ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
