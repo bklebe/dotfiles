@@ -31,6 +31,7 @@ $env.HOMEBREW_REPOSITORY = '/opt/homebrew'
 $env.path ++= path_helper /etc/paths.d/
 path add $'($env.HOMEBREW_PREFIX)/bin' $'($env.HOMEBREW_PREFIX)/sbin'
 path add $'($env.HOME)/Library/Application Support/JetBrains/Toolbox/scripts'
+path add $'($env.XDG_DATA_HOME)/cargo/bin'
 
 $env.MANPATH = $'($env.MANPATH?):(path_helper /etc/manpaths.d/ | str join ':')'
 if ($env.MANPATH | str starts-with ':' | not $in) {
@@ -42,6 +43,15 @@ $env.INFOPATH = $'($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)'
 $env.config.buffer_editor = $editor
 $env.GRADLE_USER_HOME = $env.XDG_DATA_HOME | path join 'gradle'
 $env.RUSTUP_HOME = $env.XDG_DATA_HOME | path join 'rustup'
+$env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
+$env.CARGO_HOME = $env.XDG_DATA_HOME | path join 'cargo'
+$env.CP_HOME_DIR = $env.XDG_DATA_HOME | path join 'cocoapods'
+$env.DOTNET_CLI_HOME = $env.XDG_DATA_HOME | path join 'dotnet'
+$env.FLY_CONFIG_DIR = $env.XDG_STATE_HOME | path join 'fly'
+$env.GNUPGHOME = $env.XDG_DATA_HOME | path join 'gnupg'
+$env.VAGRANT_HOME = $env.XDG_DATA_HOME | path join 'vagrant'
+
+$env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
 $env.EDITOR = $editor | str join ' '
 
 # $env.config = ($env.config
