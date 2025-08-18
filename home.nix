@@ -84,6 +84,7 @@ in
       pkgs.nixd
       pkgs.nixfmt-tree
       pkgs.nmap
+      pkgs.nodejs_24
       pkgs.ollama
       pkgs.pandoc
       pkgs.pgformatter
