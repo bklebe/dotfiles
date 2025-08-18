@@ -1,7 +1,0 @@
-brew "direnv"
-brew "fish"
-brew "jj"
-brew "mise"
-brew "rustup"
-brew "starship"
-cask "notion"
