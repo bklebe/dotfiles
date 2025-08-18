@@ -65,7 +65,10 @@ in
     pkgs._1password-cli
     pkgs.buck2
     pkgs.chezmoi
+    pkgs.claude-code
     pkgs.flyctl
+    pkgs.elixir_1_19
+    pkgs.erlang_28
     pkgs.gh
     pkgs.hyperfine
     pkgs.innoextract
@@ -79,9 +82,10 @@ in
     pkgs.nixd
     pkgs.nixfmt-tree
     pkgs.nmap
-    # pkgs.ollama # (currently broken)
+    pkgs.ollama
     pkgs.pandoc
     pkgs.pgformatter
+    pkgs.python314
     pkgs.quarkus
     pkgs.rustup
     pkgs.scc
@@ -92,6 +96,7 @@ in
     pkgs.sqlite
     pkgs.terraform
     pkgs.unar
+    pkgs.uv
     pkgs.xdg-ninja
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
