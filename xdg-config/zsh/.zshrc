@@ -2,8 +2,6 @@
 
 zmodload zsh/zprof
 
-eval "$(mise activate zsh)"
-
 if type brew >/dev/null 2>&1; then
   FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 

@@ -147,9 +147,7 @@ in
       command = ${pkgs.bash}/bin/bash --login -c ${pkgs.nushell}/bin/nu
       keybind = shift+enter=text:\n
     '';
-    "mise".source = xdg-config/mise;
     "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
-    "nushell/mise.nu".source = xdg-config/nushell/mise.nu;
     "powershell".source = xdg-config/powershell;
     "python".source = xdg-config/python;
     "zsh" = {
@@ -203,12 +201,6 @@ in
           completion: "source ${nu-scripts}/custom-completions/${completion}/${completion}-completions.nu"
         ) nuCompletions
       );
-  };
-
-  programs.mise = {
-    enable = true;
-    enableNushellIntegration = false;
-    enableBashIntegration = false;
   };
 
   programs.direnv = {

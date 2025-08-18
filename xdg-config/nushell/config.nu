@@ -18,7 +18,6 @@
 # them for future reference.
 use std/util 'path add'
 source nix.nu
-use mise.nu
 
 $env.config.show_banner = false
 
