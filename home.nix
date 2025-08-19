@@ -226,7 +226,7 @@ in
   };
   programs.gradle = {
     enable = true;
-    home = "${config.xdg.dataHome}/gradle";
+    home = ".local/share/gradle";
   };
   programs.zoxide = {
     enable = true;

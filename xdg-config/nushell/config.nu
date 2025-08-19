@@ -41,7 +41,6 @@ if ($env.MANPATH | str starts-with ':' | not $in) {
 let editor = ['zed', '--wait', '--new']
 $env.INFOPATH = $'($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)'
 $env.config.buffer_editor = $editor
-$env.GRADLE_USER_HOME = $env.XDG_DATA_HOME | path join 'gradle'
 $env.RUSTUP_HOME = $env.XDG_DATA_HOME | path join 'rustup'
 $env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
 $env.CARGO_HOME = $env.XDG_DATA_HOME | path join 'cargo'
