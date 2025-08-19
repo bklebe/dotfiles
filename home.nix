@@ -200,6 +200,7 @@ in
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
+    environmentVariables = config.home.sessionVariables;
     extraConfig =
       extraNushellConfig
       + "\n"
