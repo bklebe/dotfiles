@@ -72,11 +72,13 @@ in
       elixir_1_19
       erlang_28
       gh
+      graalvmPackages.graalvm-ce
       hyperfine
       innoextract
       jira-cli-go
       jq
       jujutsu
+      liquibase
       mas
       maven
       ncdu
