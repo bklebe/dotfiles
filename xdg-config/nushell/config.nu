@@ -51,6 +51,7 @@ $env.GNUPGHOME = $env.XDG_DATA_HOME | path join 'gnupg'
 $env.VAGRANT_HOME = $env.XDG_DATA_HOME | path join 'vagrant'
 
 $env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
+$env.DOCKER_CONFIG = $env.XDG_CONFIG_HOME | path join 'docker'
 $env.EDITOR = $editor | str join ' '
 
 # $env.config = ($env.config
