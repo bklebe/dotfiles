@@ -72,7 +72,6 @@ in
       elixir_1_19
       erlang_28
       gh
-      graalvmPackages.graalvm-ce
       hyperfine
       innoextract
       jira-cli-go
@@ -167,12 +166,12 @@ in
   xdg.enable = true;
 
   xdg.dataFile.my-gradle-install = {
-    source = "${pkgs.gradle}/lib/gradle";
+    source = "${pkgs.gradle_9}/lib/gradle";
     recursive = true;
   };
 
   xdg.dataFile.my-gradle-jdk = {
-    source = pkgs.gradle.jdk.home;
+    source = pkgs.gradle_9.jdk.home;
     recursive = true;
   };
 
@@ -229,7 +228,8 @@ in
   };
   programs.gradle = {
     enable = true;
-    home = ".local/share/gradle";
+    home = "${lib.removePrefix "${config.home.homeDirectory}/" config.xdg.dataHome}/gradle";
+    package = pkgs.gradle_9;
   };
   programs.zoxide = {
     enable = true;
