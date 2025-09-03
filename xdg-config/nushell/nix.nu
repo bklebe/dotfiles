@@ -49,3 +49,4 @@ if "NIX_SSL_CERT_FILE" in $env {
 }
 
 path add $"($nix_link)/bin" "/nix/var/nix/profiles/default/bin"
+path add "/run/current-system/sw/bin"

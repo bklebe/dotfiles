@@ -153,7 +153,7 @@ in
       scrollback-limit = 1_000_000_000
       auto-update = download
       auto-update-channel = tip
-      command = ${pkgs.bash}/bin/bash --login -c ${pkgs.nushell}/bin/nu
+      command = ${pkgs.nushell}/bin/nu
       keybind = shift+enter=text:\n
     '';
     "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
