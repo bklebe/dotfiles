@@ -89,6 +89,7 @@ in
       ollama
       pandoc
       pgformatter
+      pinentry_mac
       python314
       quarkus
       rustup
@@ -217,6 +218,7 @@ in
     enableNushellIntegration = true;
     enableBashIntegration = false;
   };
+  programs.java.enable = true;
   programs.jujutsu = {
     enable = true;
   };
