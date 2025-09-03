@@ -70,12 +70,6 @@ $env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
 $env.DOCKER_CONFIG = $env.XDG_CONFIG_HOME | path join 'docker'
 $env.EDITOR = $editor | str join ' '
 
-# $env.config = ($env.config
-#             | upsert hooks.pre_execution
-#     [{
-#         condition: {|| commandline | str contains './gradlew'}
-#         code: 'alias ./gradlew = echo "Use system gradle instead: gradle"'
-#     }])
 $env.PAGER = 'less -FRX'
 let $after_env_setup = (date now)
 if ($env.NU_PROFILE? | default "" | is-not-empty) { 
