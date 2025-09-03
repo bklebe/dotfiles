@@ -203,7 +203,7 @@ in
 
   programs.direnv = {
     enable = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     enableBashIntegration = false;
   };
   programs.java.enable = true;
