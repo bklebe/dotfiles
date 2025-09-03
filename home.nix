@@ -14,29 +14,7 @@ let
     rev = "main";
     sha256 = "sha256-0fw0fJSlUnT5vbBHDubqLrk3F+OU7CE15vIeU295C4w=";
   };
-  nuCompletions = [
-    "aws"
-    "curl"
-    "docker"
-    "gh"
-    "git"
-    "gradlew"
-    "less"
-    "make"
-    "man"
-    "mix"
-    "mvn"
-    "nix"
-    "npm"
-    "op"
-    "rg"
-    "rustup"
-    "ssh"
-    "tar"
-    "uv"
-    "vscode"
-    "zellij"
-  ];
+  nuCompletions = [];
   unfreePackages = [
     pkgs._1password-cli
     pkgs.claude-code
@@ -67,6 +45,7 @@ in
     ++ unfreePackages
     ++ (with pkgs; [
       buck2
+      carapace
       chezmoi
       flyctl
       elixir_1_19
@@ -208,9 +187,18 @@ in
       + "\n"
       + builtins.concatStringsSep "\n" (
         map (
-          completion: "source ${nu-scripts}/custom-completions/${completion}/${completion}-completions.nu"
+          completion:
+          builtins.readFile "${nu-scripts}/custom-completions/${completion}/${completion}-completions.nu"
         ) nuCompletions
-      );
+      )
+      + "\n"
+      + ''
+        let $after_completion = (date now)
+        if ($env.NU_PROFILE? | default "" | is-not-empty) { 
+            print $"PROFILE: completions took (($after_completion - $after_secrets) / 1ms)ms" 
+            print $"PROFILE: Total startup took (($after_completion - $startup_begin) / 1ms)ms" 
+        }
+      '';
   };
 
   programs.direnv = {
