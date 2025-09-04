@@ -59,6 +59,7 @@ in
       liquibase
       mas
       maven
+      meld
       ncdu
       nil
       nixd
@@ -79,6 +80,7 @@ in
       spring-boot-cli
       sqlite
       unar
+      wireshark
       xdg-ninja
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.

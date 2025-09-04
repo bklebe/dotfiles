@@ -8,12 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      mac-app-util,
       ...
     }:
     let
@@ -26,7 +28,7 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ mac-app-util.homeManagerModules.default ./home.nix ];
         extraSpecialArgs = {
           user = "ada";
           userPackages = [ ];
@@ -39,7 +41,7 @@
         inherit pkgs;
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ mac-app-util.homeManagerModules.default ./home.nix ];
         extraSpecialArgs = {
           user = "beatrix";
           userPackages = [
