@@ -15,10 +15,10 @@ let
     sha256 = "sha256-0fw0fJSlUnT5vbBHDubqLrk3F+OU7CE15vIeU295C4w=";
   };
   nuCompletions = [ ];
-  unfreePackages = [
-    pkgs._1password-cli
-    pkgs.claude-code
-    pkgs.terraform
+  unfreePackages = with pkgs; [
+    _1password-cli
+    claude-code
+    terraform
   ];
 in
 {
