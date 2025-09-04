@@ -44,6 +44,7 @@ $env.path ++= path_helper /etc/paths.d/
 path add $'($env.HOMEBREW_PREFIX)/bin' $'($env.HOMEBREW_PREFIX)/sbin'
 path add $'($env.HOME)/Library/Application Support/JetBrains/Toolbox/scripts'
 path add $'($env.XDG_DATA_HOME)/cargo/bin'
+path add $'($env.HOME)/.local/bin'
 let $after_path_setup = (date now)
 if ($env.NU_PROFILE? | default "" | is-not-empty) { 
     print $"PROFILE: Path setup took (($after_path_setup - $after_nix) / 1ms)ms" 

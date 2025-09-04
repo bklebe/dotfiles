@@ -14,7 +14,7 @@ let
     rev = "main";
     sha256 = "sha256-0fw0fJSlUnT5vbBHDubqLrk3F+OU7CE15vIeU295C4w=";
   };
-  nuCompletions = [];
+  nuCompletions = [ ];
   unfreePackages = [
     pkgs._1password-cli
     pkgs.claude-code
@@ -79,7 +79,6 @@ in
       spring-boot-cli
       sqlite
       unar
-      uv
       xdg-ninja
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
@@ -220,6 +219,9 @@ in
     enable = true;
     home = "${lib.removePrefix "${config.home.homeDirectory}/" config.xdg.dataHome}/gradle";
     package = pkgs.gradle_9;
+  };
+  programs.uv = {
+    enable = true;
   };
   programs.zoxide = {
     enable = true;
