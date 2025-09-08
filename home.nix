@@ -44,7 +44,7 @@ in
     userPackages
     ++ unfreePackages
     ++ (with pkgs; [
-      buck2
+      # buck2 (broken)
       carapace
       chezmoi
       duckdb
