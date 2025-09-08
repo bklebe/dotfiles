@@ -22,13 +22,13 @@ let $startup_begin = (date now)
 
 use std/util 'path add'
 let $after_imports = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-    print $"PROFILE: Imports took (($after_imports - $startup_begin) / 1ms)ms" 
+if ($env.NU_PROFILE? | default "" | is-not-empty) {
+    print $"PROFILE: Imports took (($after_imports - $startup_begin) / 1ms)ms"
 }
 source nix.nu
 let $after_nix = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-    print $"PROFILE: nix.nu took (($after_nix - $after_imports) / 1ms)ms" 
+if ($env.NU_PROFILE? | default "" | is-not-empty) {
+    print $"PROFILE: nix.nu took (($after_nix - $after_imports) / 1ms)ms"
 }
 
 $env.config.show_banner = false
@@ -45,9 +45,10 @@ path add $'($env.HOMEBREW_PREFIX)/bin' $'($env.HOMEBREW_PREFIX)/sbin'
 path add $'($env.HOME)/Library/Application Support/JetBrains/Toolbox/scripts'
 path add $'($env.XDG_DATA_HOME)/cargo/bin'
 path add $'($env.HOME)/.local/bin'
+path add '/usr/local/bin'
 let $after_path_setup = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-    print $"PROFILE: Path setup took (($after_path_setup - $after_nix) / 1ms)ms" 
+if ($env.NU_PROFILE? | default "" | is-not-empty) {
+    print $"PROFILE: Path setup took (($after_path_setup - $after_nix) / 1ms)ms"
 }
 
 $env.MANPATH = $'($env.MANPATH?):(path_helper /etc/manpaths.d/ | str join ':')'
@@ -73,8 +74,8 @@ $env.EDITOR = $editor | str join ' '
 
 $env.PAGER = 'less -FRX'
 let $after_env_setup = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-    print $"PROFILE: Environment setup took (($after_env_setup - $after_path_setup) / 1ms)ms" 
+if ($env.NU_PROFILE? | default "" | is-not-empty) {
+    print $"PROFILE: Environment setup took (($after_env_setup - $after_path_setup) / 1ms)ms"
 }
 
 let carapace_completer = {|spans|
@@ -89,7 +90,7 @@ $env.config.completions.external = {
 
 # source secrets.nu
 let $after_secrets = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-    print $"PROFILE: secrets.nu took (($after_secrets - $after_env_setup) / 1ms)ms" 
-    # print $"PROFILE: Total startup took (($after_secrets - $startup_begin) / 1ms)ms" 
+if ($env.NU_PROFILE? | default "" | is-not-empty) {
+    print $"PROFILE: secrets.nu took (($after_secrets - $after_env_setup) / 1ms)ms"
+    # print $"PROFILE: Total startup took (($after_secrets - $startup_begin) / 1ms)ms"
 }

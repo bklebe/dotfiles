@@ -47,15 +47,15 @@ in
       buck2
       carapace
       chezmoi
-      flyctl
+      duckdb
       elixir_1_19
       erlang_28
+      flyctl
       gh
       hyperfine
       innoextract
       jira-cli-go
       jq
-      jujutsu
       liquibase
       mas
       maven
@@ -67,6 +67,7 @@ in
       nmap
       nodejs_24
       ollama
+      ouch
       pandoc
       pgformatter
       pinentry_mac
