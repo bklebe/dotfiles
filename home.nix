@@ -43,6 +43,9 @@ in
   home.packages =
     userPackages
     ++ unfreePackages
+    ++ [
+      (import ./packages/azul-mission-control.nix { inherit pkgs; })
+    ]
     ++ (with pkgs; [
       # buck2 (broken)
       carapace
