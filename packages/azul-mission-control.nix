@@ -19,8 +19,8 @@ pkgs.stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/Applications
-    cp -r "zmc$version-ca-macos_aarch64/Azul Mission Control.app" $out/Applications/
-    
+    mv "zmc$version-ca-macos_aarch64/Azul Mission Control.app" $out/Applications/
+
     # Patch zmc.ini to use Nix Java
     iniFile="$out/Applications/Azul Mission Control.app/Contents/Eclipse/zmc.ini"
     if [ -f "$iniFile" ]; then
