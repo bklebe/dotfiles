@@ -8,6 +8,9 @@
   ...
 }:
 let
+  gradle8 = pkgs.writeShellScriptBin "gradle8" ''
+    exec ${pkgs.gradle_8}/bin/gradle "$@"
+  '';
   nu-scripts = pkgs.fetchFromGitHub {
     owner = "nushell";
     repo = "nu_scripts";
@@ -55,6 +58,7 @@ in
       erlang_28
       flyctl
       gh
+      gradle8
       hyperfine
       innoextract
       jira-cli-go
@@ -150,6 +154,11 @@ in
   };
   xdg.enable = true;
 
+  xdg.dataFile.my-gradle_8-install = {
+    source = "${pkgs.gradle_8}/lib/gradle";
+    recursive = true;
+  };
+  
   xdg.dataFile.my-gradle-install = {
     source = "${pkgs.gradle_9}/lib/gradle";
     recursive = true;
