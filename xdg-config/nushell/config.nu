@@ -16,22 +16,16 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
-
-# PROFILE: Startup timing
-let $startup_begin = (date now)
-
 use std/util 'path add'
-let $after_imports = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) {
-    print $"PROFILE: Imports took (($after_imports - $startup_begin) / 1ms)ms"
-}
 source nix.nu
-let $after_nix = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) {
-    print $"PROFILE: nix.nu took (($after_nix - $after_imports) / 1ms)ms"
-}
 
-$env.config.show_banner = false
+$env.ENV_CONVERSIONS = {
+    ...$env.ENV_CONVERSIONS?
+    EDITOR : {
+        from_string: { |s| $s | split row ' ' }
+        to_string: { |v| $v | str join ' ' }
+    }
+}
 
 def path_helper [dir] {
     ls $dir | select name | each { |f| open $f.name | split row '\n' } | flatten
@@ -46,10 +40,6 @@ path add $'($env.HOME)/Library/Application Support/JetBrains/Toolbox/scripts'
 path add $'($env.XDG_DATA_HOME)/cargo/bin'
 path add $'($env.HOME)/.local/bin'
 path add '/usr/local/bin'
-let $after_path_setup = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) {
-    print $"PROFILE: Path setup took (($after_path_setup - $after_nix) / 1ms)ms"
-}
 
 $env.MANPATH = $'($env.MANPATH?):(path_helper /etc/manpaths.d/ | str join ':')'
 if ($env.MANPATH | str starts-with ':' | not $in) {
@@ -57,27 +47,27 @@ if ($env.MANPATH | str starts-with ':' | not $in) {
 }
 
 $env.INFOPATH = $'($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)'
-$env.config.buffer_editor = $env.EDITOR
 
 $env.PAGER = 'less -FRX'
-let $after_env_setup = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) {
-    print $"PROFILE: Environment setup took (($after_env_setup - $after_path_setup) / 1ms)ms"
-}
+
+# source secrets.nu
 
 let carapace_completer = {|spans|
     carapace $spans.0 nushell ...$spans | from json
 }
 
-$env.config.completions.external = {
-    enable: true
-    max_results: 100
-    completer: $carapace_completer
-}
-
-# source secrets.nu
-let $after_secrets = (date now)
-if ($env.NU_PROFILE? | default "" | is-not-empty) {
-    print $"PROFILE: secrets.nu took (($after_secrets - $after_env_setup) / 1ms)ms"
-    # print $"PROFILE: Total startup took (($after_secrets - $startup_begin) / 1ms)ms"
+$env.config = {
+    buffer_editor: $env.EDITOR
+    show_banner: false
+    history: {
+        file_format: "sqlite"
+        isolation: true
+    }
+    completions: {
+        external: {
+            enable: true
+            max_results: 100
+            completer: $carapace_completer
+        }
+    }
 }

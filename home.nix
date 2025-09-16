@@ -52,7 +52,6 @@ in
     ]
     ++ (with pkgs; [
       # buck2 (broken)
-      carapace
       chezmoi
       duckdb
       elixir_1_19
@@ -216,12 +215,15 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.bash.enable = true;
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = false;
+  };
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
     extraConfig = extraNushellConfig;
   };
-
   programs.direnv = {
     enable = true;
     enableNushellIntegration = false;
