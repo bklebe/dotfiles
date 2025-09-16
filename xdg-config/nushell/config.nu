@@ -58,17 +58,6 @@ if ($env.MANPATH | str starts-with ':' | not $in) {
 
 $env.INFOPATH = $'($env.HOMEBREW_PREFIX)/share/info:($env.INFOPATH?)'
 $env.config.buffer_editor = $env.EDITOR
-$env.RUSTUP_HOME = $env.XDG_DATA_HOME | path join 'rustup'
-$env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
-$env.CARGO_HOME = $env.XDG_DATA_HOME | path join 'cargo'
-$env.CP_HOME_DIR = $env.XDG_DATA_HOME | path join 'cocoapods'
-$env.DOTNET_CLI_HOME = $env.XDG_DATA_HOME | path join 'dotnet'
-$env.FLY_CONFIG_DIR = $env.XDG_STATE_HOME | path join 'fly'
-$env.GNUPGHOME = $env.XDG_DATA_HOME | path join 'gnupg'
-$env.VAGRANT_HOME = $env.XDG_DATA_HOME | path join 'vagrant'
-
-$env.ANDROID_USER_HOME = $env.XDG_DATA_HOME | path join 'android'
-$env.DOCKER_CONFIG = $env.XDG_CONFIG_HOME | path join 'docker'
 
 $env.PAGER = 'less -FRX'
 let $after_env_setup = (date now)

@@ -198,8 +198,17 @@ in
   #
   home.sessionVariables = {
     EDITOR = "'${pkgs.zed-editor}/bin/zeditor --wait --new'";
+    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+    ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
+    CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    CP_HOME_DIR = "${config.xdg.dataHome}/cocoapods";
+    DOTNET_CLI_HOME = "${config.xdg.dataHome}/dotnet";
+    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+    VAGRANT_HOME = "${config.xdg.dataHome}/vagrant";
+    FLY_CONFIG_DIR = "${config.xdg.stateHome}/fly";
+    DOCKER_CONFIG = "${config.xdg.configHome}/docker";
   };
-  
+
   home.shellAliases = {
     zed = "zeditor";
   };

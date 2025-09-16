@@ -24,7 +24,8 @@ $env.ENV_CONVERSIONS = {
     }
 }
 let nix_default_profile = "/nix/var/nix/profiles/default"
-$env.NIX_PROFILES = [$nix_default_profile, $nix_link]
+let nix_darwin_profile = "/run/current-system/sw"
+$env.NIX_PROFILES = [$nix_default_profile, $nix_darwin_profile, $nix_link]
 let nix_link_share = $nix_link | path join "share"
 if "XDG_DATA_DIRS" not-in $env {
     $env.XDG_DATA_DIRS = ["/usr/local/share" "/usr/share" $nix_link_share $nix_default_profile]
@@ -48,5 +49,4 @@ if "NIX_SSL_CERT_FILE" in $env {
     | each { |p| $env.NIX_SSL_CERT_FILE = $p | path join "etc/ssl/certs/ca-bundle.crt" }
 }
 
-path add $"($nix_link)/bin" "/nix/var/nix/profiles/default/bin"
-path add "/run/current-system/sw/bin"
+path add ($env.NIX_PROFILES | each { |p| $"($p)/bin" })
