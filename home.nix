@@ -7,6 +7,7 @@
   lib,
   ...
 }:
+with lib;
 let
   gradle8 = pkgs.writeShellScriptBin "gradle8" ''
     exec ${pkgs.gradle_8}/bin/gradle "$@"
@@ -23,6 +24,13 @@ let
     claude-code
     terraform
   ];
+  launchctl-setenv = pkgs.writeShellScriptBin "launchctl-setenv" (
+    concatStringsSep "\n" (
+      mapAttrsToList (
+        name: val: "/bin/launchctl setenv ${name} ${toString val}"
+      ) config.home.sessionVariables
+    )
+  );
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -126,6 +134,15 @@ in
     # '';
   };
 
+  launchd.agents.launchctl-setenv = {
+    enable = true;
+    config = {
+      ProgramArguments = [ "${launchctl-setenv}/bin/launchctl-setenv" ];
+      KeepAlive.SuccessfulExit = false;
+      RunAtLoad = true;
+    };
+  };
+
   xdg.configFile = {
     "doom".source = xdg-config/doom;
     "fish/config.fish".source = xdg-config/fish/config.fish;
@@ -158,7 +175,7 @@ in
     source = "${pkgs.gradle_8}/lib/gradle";
     recursive = true;
   };
-  
+
   xdg.dataFile.my-gradle-install = {
     source = "${pkgs.gradle_9}/lib/gradle";
     recursive = true;
@@ -208,9 +225,9 @@ in
       + "\n"
       + ''
         let $after_completion = (date now)
-        if ($env.NU_PROFILE? | default "" | is-not-empty) { 
-            print $"PROFILE: completions took (($after_completion - $after_secrets) / 1ms)ms" 
-            print $"PROFILE: Total startup took (($after_completion - $startup_begin) / 1ms)ms" 
+        if ($env.NU_PROFILE? | default "" | is-not-empty) {
+            print $"PROFILE: completions took (($after_completion - $after_secrets) / 1ms)ms"
+            print $"PROFILE: Total startup took (($after_completion - $startup_begin) / 1ms)ms"
         }
       '';
   };

@@ -28,7 +28,10 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ mac-app-util.homeManagerModules.default ./home.nix ];
+        modules = [
+          mac-app-util.homeManagerModules.default
+          ./home.nix
+        ];
         extraSpecialArgs = {
           user = "ada";
           userPackages = [ ];
@@ -41,7 +44,10 @@
         inherit pkgs;
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ mac-app-util.homeManagerModules.default ./home.nix ];
+        modules = [
+          mac-app-util.homeManagerModules.default
+          ./home.nix
+        ];
         extraSpecialArgs = {
           user = "beatrix";
           userPackages = [

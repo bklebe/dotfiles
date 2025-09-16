@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgs.unzip ];
-  
+
   buildInputs = [ pkgs.jdk21 ];
 
   unpackPhase = ''
