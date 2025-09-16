@@ -1,13 +1,12 @@
 # shellcheck shell=sh
 
-export EDITOR="code --new-window --wait"
+zmodload zsh/zprof
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 prefix=$(brew --prefix)
 alias ibrew="/usr/local/bin/brew"
 
-export XDG_CONFIG_HOME="$HOME/.config"
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 export PATH="\
@@ -41,3 +40,5 @@ fi
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# zprof

@@ -1,21 +1,14 @@
 # shellcheck shell=sh
-
 zmodload zsh/zprof
 
 if type brew >/dev/null 2>&1; then
   FPATH="$HOME/.config/zsh/functions/:$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
-  autoload bashcompinit && bashcompinit
-  autoload -Uz compinit && compinit
-  complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
   . <(jj util completion zsh)
 fi
 
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-
-# . "$(pack completion --shell zsh)"
 
 alias svn='svn --config-dir $XDG_CONFIG_HOME/subversion'
 
@@ -59,23 +52,8 @@ zipcdiff() {
   diff <(unzip -vqql "$1" | awk "$A" | sort -k3) <(unzip -vqql "$2" | awk "$A" | sort -k3)
 }
 
-uninstall_nix_darwin() {
-  nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
-  sudo mv /etc/bashrc.before-nix-darwin /etc/bashrc
-  sudo mv /etc/zshrc.before-nix-darwin /etc/zshrc
-  sudo mv /etc/zshenv.before-nix-darwin /etc/zshenv
-  sudo mv /etc/zprofile.before-nix-darwin /etc/zprofile
-  sudo mv /etc/nix/nix.conf.before-nix-darwin /etc/nix/nix.conf
-  sudo mv /etc/ssl/certs/ca-certificates.crt.before-nix-darwin /etc/ssl/certs/ca-certificates.crt
-}
-
-install_nix_darwin() {
-  sudo mv -f /etc/bashrc /etc/bashrc.before-nix-darwin
-  sudo mv -f /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
-  sudo mv -f /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt.before-nix-darwin
-  nix --experimental-features 'nix-command flakes' run nix-darwin -- switch --flake ~/.config/nix-darwin
-}
-
 # eval "$(devbox global shellenv)"
 
 eval "$(direnv hook zsh)"
+
+# zprof
