@@ -12,13 +12,6 @@ let
   gradle8 = pkgs.writeShellScriptBin "gradle8" ''
     exec ${pkgs.gradle_8}/bin/gradle "$@"
   '';
-  nu-scripts = pkgs.fetchFromGitHub {
-    owner = "nushell";
-    repo = "nu_scripts";
-    rev = "main";
-    sha256 = "sha256-0fw0fJSlUnT5vbBHDubqLrk3F+OU7CE15vIeU295C4w=";
-  };
-  nuCompletions = [ ];
   unfreePackages = with pkgs; [
     _1password-cli
     claude-code
@@ -217,24 +210,7 @@ in
   programs.nushell = {
     enable = true;
     configFile.source = xdg-config/nushell/config.nu;
-    environmentVariables = config.home.sessionVariables;
-    extraConfig =
-      extraNushellConfig
-      + "\n"
-      + builtins.concatStringsSep "\n" (
-        map (
-          completion:
-          builtins.readFile "${nu-scripts}/custom-completions/${completion}/${completion}-completions.nu"
-        ) nuCompletions
-      )
-      + "\n"
-      + ''
-        let $after_completion = (date now)
-        if ($env.NU_PROFILE? | default "" | is-not-empty) {
-            print $"PROFILE: completions took (($after_completion - $after_secrets) / 1ms)ms"
-            print $"PROFILE: Total startup took (($after_completion - $startup_begin) / 1ms)ms"
-        }
-      '';
+    extraConfig = extraNushellConfig;
   };
 
   programs.direnv = {
