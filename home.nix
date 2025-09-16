@@ -98,6 +98,7 @@ in
       unar
       wireshark
       xdg-ninja
+      zed-editor
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
       # pkgs.hello
@@ -203,7 +204,11 @@ in
   #  /etc/profiles/per-user/ada/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "'${pkgs.zed-editor}/bin/zeditor --wait --new'";
+  };
+  
+  home.shellAliases = {
+    zed = "zeditor";
   };
 
   # Let Home Manager install and manage itself.
