@@ -15,7 +15,6 @@ let
   unfreePackages = with pkgs; [
     _1password-cli
     claude-code
-    terraform
   ];
   launchctl-setenv = pkgs.writeShellScriptBin "launchctl-setenv" (
     concatStringsSep "\n" (
