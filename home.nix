@@ -53,6 +53,7 @@ in
     ++ (with pkgs; [
       # buck2 (broken)
       chezmoi
+      devenv
       duckdb
       elixir_1_19
       erlang_28
