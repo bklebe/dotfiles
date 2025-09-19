@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation rec {
 
   src = pkgs.fetchurl {
     url = "https://github.com/adoptium/jmc-build/releases/download/${version}/org.openjdk.jmc-${version}-macosx.cocoa.aarch64.tar.gz";
-    sha256 = "";
+    sha256 = "sha256-fWhbjrkgcYiJzeNLp7tACMkY61Zf1iSLaZ/jJA1MK+U=";
   };
 
   nativeBuildInputs = [ ];
@@ -14,7 +14,7 @@ pkgs.stdenv.mkDerivation rec {
   buildInputs = [ pkgs.jdk21 ];
 
   unpackPhase = ''
-    cat $src | tar xv -
+    tar xzvf $src
   '';
 
   installPhase = ''

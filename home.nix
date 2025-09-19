@@ -47,7 +47,7 @@ in
     userPackages
     ++ unfreePackages
     ++ [
-      (import ./packages/azul-mission-control.nix { inherit pkgs; })
+      (import ./packages/jdk-mission-control.nix { inherit pkgs; })
     ]
     ++ (with pkgs; [
       # buck2 (broken)
