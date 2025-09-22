@@ -88,6 +88,7 @@ in
       spring-boot-cli
       sqlite
       unar
+      visualvm
       wireshark
       xdg-ninja
       # # Adds the 'hello' command to your environment. It prints a friendly
