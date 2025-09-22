@@ -90,7 +90,6 @@ in
       unar
       wireshark
       xdg-ninja
-      zed-editor
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
       # pkgs.hello
@@ -196,7 +195,7 @@ in
   #  /etc/profiles/per-user/ada/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "'${pkgs.zed-editor}/bin/zeditor --wait --new'";
+    EDITOR = "'/opt/homebrew/bin/zed --wait --new'";
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
@@ -209,7 +208,6 @@ in
   };
 
   home.shellAliases = {
-    zed = "zeditor";
   };
 
   # Let Home Manager install and manage itself.
