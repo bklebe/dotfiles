@@ -79,7 +79,6 @@ in
       mas
       maven
       meld
-      mise
       ncdu
       nil
       nixd
@@ -252,6 +251,10 @@ in
       enable = true;
       home = "${lib.removePrefix "${config.home.homeDirectory}/" config.xdg.dataHome}/gradle";
       package = pkgs.gradle_9;
+    };
+    mise = {
+      enable = true;
+      enableNushellIntegration = true;
     };
     nushell = {
       enable = true;
