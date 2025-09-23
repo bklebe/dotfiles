@@ -149,52 +149,53 @@ in
     };
   };
 
-  xdg.configFile = {
-    "doom".source = xdg-config/doom;
-    "fish/config.fish".source = xdg-config/fish/config.fish;
-    "ghostty/config".text = ''
-      macos-option-as-alt = left
-      keybind = alt+left=esc:b
-      keybind = alt+right=esc:f
-      font-family = "PragmataPro Mono"
-      font-size = 14
-      font-feature = -calt
-      font-feature = -liga
-      font-feature = -dlig
-      scrollback-limit = 1_000_000_000
-      auto-update = download
-      auto-update-channel = tip
-      command = ${pkgs.nushell}/bin/nu
-      keybind = shift+enter=text:\n
-    '';
-    "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
-    "powershell".source = xdg-config/powershell;
-    "python".source = xdg-config/python;
-    "zsh" = {
-      source = xdg-config/zsh;
-      recursive = true;
+  xdg = {
+    enable = true;
+    configFile = {
+      "doom".source = xdg-config/doom;
+      "fish/config.fish".source = xdg-config/fish/config.fish;
+      "ghostty/config".text = ''
+        macos-option-as-alt = left
+        keybind = alt+left=esc:b
+        keybind = alt+right=esc:f
+        font-family = "PragmataPro Mono"
+        font-size = 14
+        font-feature = -calt
+        font-feature = -liga
+        font-feature = -dlig
+        scrollback-limit = 1_000_000_000
+        auto-update = download
+        auto-update-channel = tip
+        command = ${pkgs.nushell}/bin/nu
+        keybind = shift+enter=text:\n
+      '';
+      "nushell/nix.nu".source = xdg-config/nushell/nix.nu;
+      "powershell".source = xdg-config/powershell;
+      "python".source = xdg-config/python;
+      "zsh" = {
+        source = xdg-config/zsh;
+        recursive = true;
+      };
     };
-  };
-  xdg.enable = true;
 
-  xdg.dataFile.my-gradle_8-install = {
-    source = "${pkgs.gradle_8}/lib/gradle";
-    recursive = true;
-  };
-
-  xdg.dataFile.my-maven-install = {
-    source = "${pkgs.maven}";
-    recursive = true;
-  };
-
-  xdg.dataFile.my-gradle-install = {
-    source = "${pkgs.gradle_9}/lib/gradle";
-    recursive = true;
-  };
-
-  xdg.dataFile.my-gradle-jdk = {
-    source = pkgs.gradle_9.jdk.home;
-    recursive = true;
+    dataFile = {
+      my-gradle_8-install = {
+        source = "${pkgs.gradle_8}/lib/gradle";
+        recursive = true;
+      };
+      my-maven-install = {
+        source = "${pkgs.maven}";
+        recursive = true;
+      };
+      my-gradle-install = {
+        source = "${pkgs.gradle_9}/lib/gradle";
+        recursive = true;
+      };
+      my-gradle-jdk = {
+        source = pkgs.gradle_9.jdk.home;
+        recursive = true;
+      };
+    };
   };
 
   # Home Manager can also manage your environment variables through
@@ -229,43 +230,37 @@ in
   home.shellAliases = {
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs.bash.enable = true;
-  programs.carapace = {
-    enable = true;
-    enableNushellIntegration = false;
-  };
-  programs.nushell = {
-    enable = true;
-    configFile.source = xdg-config/nushell/config.nu;
-    extraConfig = extraNushellConfig;
-  };
-  programs.direnv = {
-    enable = true;
-    enableNushellIntegration = false;
-    enableBashIntegration = false;
-  };
-  programs.java.enable = true;
-  programs.jujutsu = {
-    enable = true;
-  };
-  programs.ripgrep = {
-    enable = true;
-  };
-  programs.awscli = {
-    enable = true;
-  };
-  programs.gradle = {
-    enable = true;
-    home = "${lib.removePrefix "${config.home.homeDirectory}/" config.xdg.dataHome}/gradle";
-    package = pkgs.gradle_9;
-  };
-  programs.uv = {
-    enable = true;
-  };
-  programs.zoxide = {
-    enable = true;
-    enableNushellIntegration = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+    awscli.enable = true;
+    bash.enable = true;
+    java.enable = true;
+    jujutsu.enable = true;
+    ripgrep.enable = true;
+    uv.enable = true;
+    carapace = {
+      enable = true;
+      enableNushellIntegration = false;
+    };
+    direnv = {
+      enable = true;
+      enableNushellIntegration = false;
+      enableBashIntegration = false;
+    };
+    gradle = {
+      enable = true;
+      home = "${lib.removePrefix "${config.home.homeDirectory}/" config.xdg.dataHome}/gradle";
+      package = pkgs.gradle_9;
+    };
+    nushell = {
+      enable = true;
+      configFile.source = xdg-config/nushell/config.nu;
+      extraConfig = extraNushellConfig;
+    };
+    zoxide = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 }
