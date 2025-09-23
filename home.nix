@@ -29,6 +29,7 @@ in
   # manage.
   home.username = user;
   home.homeDirectory = "/Users/${user}";
+  news.display = "silent";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
