@@ -68,6 +68,7 @@ in
       mas
       maven
       meld
+      mise
       ncdu
       nil
       nixd
@@ -167,6 +168,11 @@ in
 
   xdg.dataFile.my-gradle_8-install = {
     source = "${pkgs.gradle_8}/lib/gradle";
+    recursive = true;
+  };
+
+  xdg.dataFile.my-maven-install = {
+    source = "${pkgs.maven}";
     recursive = true;
   };
 
