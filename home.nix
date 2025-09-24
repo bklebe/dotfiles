@@ -61,6 +61,10 @@ in
       gh
       gradle8
       hyperfine
+      idris2
+      idris2Packages.idris2Api
+      idris2Packages.idris2Lsp
+      idris2Packages.pack
       innoextract
       jira-cli-go
       jq
