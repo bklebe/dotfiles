@@ -5,6 +5,11 @@
   userPackages,
   extraNushellConfig,
   lib,
+  idris2,
+  idris2Lsp,
+  idris2Packages,
+  buildIdris,
+  buildIdris',
   ...
 }:
 with lib;
@@ -50,21 +55,23 @@ in
     ++ [
       (import ./packages/jdk-mission-control.nix { inherit pkgs; })
     ]
+    ++ [
+      idris2
+      idris2Lsp
+      idris2Packages.pack
+    ]
     ++ (with pkgs; [
       # buck2 (broken)
       chezmoi
       devenv
       duckdb
       elixir_1_19
+      emacs
       erlang_28
       flyctl
       gh
       gradle8
       hyperfine
-      idris2
-      idris2Packages.idris2Api
-      idris2Packages.idris2Lsp
-      idris2Packages.pack
       innoextract
       jira-cli-go
       jq

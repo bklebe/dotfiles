@@ -9,13 +9,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    packageset.url = "github:mattpolzin/nix-idris2-packages";
   };
-
+  nixConfig = {
+    extra-substituters = [ "https://gh-nix-idris2-packages.cachix.org" ];
+    extra-trusted-public-keys = [
+      "gh-nix-idris2-packages.cachix.org-1:iOqSB5DrESFT+3A1iNzErgB68IDG8BrHLbLkhztOXfo="
+    ];
+  };
   outputs =
     {
       nixpkgs,
       home-manager,
       mac-app-util,
+      packageset,
       ...
     }:
     let
@@ -33,6 +40,13 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit (packageset.packages.${system})
+            idris2
+            idris2Lsp
+            idris2Packages
+            buildIdris
+            buildIdris'
+            ;
           user = "ada";
           userPackages = [ ];
           extraNushellConfig = "";
