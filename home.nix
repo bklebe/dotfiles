@@ -64,6 +64,7 @@ in
       # buck2 (broken)
       chezmoi
       devenv
+      difftastic
       duckdb
       elixir_1_19
       emacs
@@ -80,8 +81,8 @@ in
       maven
       meld
       ncdu
-      nil
       nixd
+      nixfmt
       nixfmt-tree
       nmap
       nodejs_24
@@ -180,19 +181,15 @@ in
     dataFile = {
       my-gradle_8-install = {
         source = "${pkgs.gradle_8}/lib/gradle";
-        recursive = true;
       };
       my-maven-install = {
         source = "${pkgs.maven}";
-        recursive = true;
       };
       my-gradle-install = {
         source = "${pkgs.gradle_9}/lib/gradle";
-        recursive = true;
       };
       my-gradle-jdk = {
         source = pkgs.gradle_9.jdk.home;
-        recursive = true;
       };
     };
   };

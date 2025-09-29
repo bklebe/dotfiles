@@ -63,6 +63,13 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit (packageset.packages.${system})
+            idris2
+            idris2Lsp
+            idris2Packages
+            buildIdris
+            buildIdris'
+            ;
           user = "beatrix";
           userPackages = [
             pkgs.coursier
