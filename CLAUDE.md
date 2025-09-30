@@ -10,11 +10,17 @@ This is a Home Manager configuration for macOS (aarch64-darwin) using Nix flakes
 
 ### Building and Activating Configuration
 ```bash
-# Build and activate home-manager configuration
+# Build and activate home-manager configuration for current user
+home-manager switch
+
+# Build and activate home-manager configuration for specific user
 home-manager switch --flake .#ada
 home-manager switch --flake .#beatrix
 
-# Build without activating
+# Build for current user without activating
+home-manager build
+
+# Build for a specific user without activating
 home-manager build --flake .#ada
 
 # Update flake inputs
