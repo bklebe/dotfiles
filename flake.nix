@@ -10,6 +10,7 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util";
     packageset.url = "github:mattpolzin/nix-idris2-packages";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
   nixConfig = {
     extra-substituters = [ "https://gh-nix-idris2-packages.cachix.org" ];
@@ -23,6 +24,7 @@
       home-manager,
       mac-app-util,
       packageset,
+      claude-code,
       ...
     }:
     let
@@ -40,6 +42,7 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit claude-code;
           inherit (packageset.packages.${system})
             idris2
             idris2Lsp
@@ -63,6 +66,7 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit claude-code;
           inherit (packageset.packages.${system})
             idris2
             idris2Lsp

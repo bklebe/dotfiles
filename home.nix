@@ -4,6 +4,7 @@
   user,
   userPackages,
   extraNushellConfig,
+  claude-code,
   lib,
   idris2,
   idris2Lsp,
@@ -17,9 +18,9 @@ let
   gradle8 = pkgs.writeShellScriptBin "gradle8" ''
     exec ${pkgs.gradle_8}/bin/gradle "$@"
   '';
-  unfreePackages = with pkgs; [
-    _1password-cli
-    claude-code
+  unfreePackages = [
+    pkgs._1password-cli
+    pkgs.claude-code
   ];
   launchctl-setenv = pkgs.writeShellScriptBin "launchctl-setenv" (
     concatStringsSep "\n" (
@@ -49,6 +50,7 @@ in
   # environment.
   nixpkgs.config.allowUnfreePredicate =
     pkg: builtins.elem (lib.getName pkg) (lib.map (p: lib.getName p) unfreePackages);
+  nixpkgs.overlays = [ claude-code.overlays.default ];
   home.packages =
     userPackages
     ++ unfreePackages
