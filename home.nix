@@ -67,6 +67,7 @@ in
       chezmoi
       devenv
       difftastic
+      dua
       duckdb
       elixir_1_19
       emacs
