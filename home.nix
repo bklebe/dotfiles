@@ -58,9 +58,9 @@ in
       (import ./packages/jdk-mission-control.nix { inherit pkgs; })
     ]
     ++ [
-      idris2
-      idris2Lsp
-      idris2Packages.pack
+      # idris2
+      # idris2Lsp
+      # idris2Packages.pack
     ]
     ++ (with pkgs; [
       # buck2 (broken)
@@ -83,7 +83,10 @@ in
       mas
       maven
       meld
+      mitmproxy
+      natscli
       ncdu
+      nil
       nixd
       nixfmt
       nixfmt-tree
@@ -101,11 +104,11 @@ in
       shellcheck
       shfmt
       skaffold
+      source-code-pro
       spring-boot-cli
       sqlite
       unar
       visualvm
-      wireshark
       xdg-ninja
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
