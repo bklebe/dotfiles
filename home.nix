@@ -155,7 +155,6 @@ in
   xdg = {
     enable = true;
     configFile = {
-      "doom".source = xdg-config/doom;
       "fish/config.fish".source = xdg-config/fish/config.fish;
       "ghostty/config".text = ''
         macos-option-as-alt = left
@@ -224,6 +223,7 @@ in
     VAGRANT_HOME = "${config.xdg.dataHome}/vagrant";
     FLY_CONFIG_DIR = "${config.xdg.stateHome}/fly";
     DOCKER_CONFIG = "${config.xdg.configHome}/docker";
+    DOOMDIR = "${config.xdg.configHome}/home-manager/doom";
   };
 
   home.shellAliases = {
