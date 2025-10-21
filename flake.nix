@@ -11,11 +11,16 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     packageset.url = "github:mattpolzin/nix-idris2-packages";
     claude-code.url = "github:sadjow/claude-code-nix";
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
   nixConfig = {
-    extra-substituters = [ "https://gh-nix-idris2-packages.cachix.org" ];
+    extra-substituters = [
+      "https://gh-nix-idris2-packages.cachix.org"
+      "https://codex-cli.cachix.org"
+    ];
     extra-trusted-public-keys = [
       "gh-nix-idris2-packages.cachix.org-1:iOqSB5DrESFT+3A1iNzErgB68IDG8BrHLbLkhztOXfo="
+      "codex-cli.cachix.org-1:1Br3H1hHoRYG22n//cGKJOk3cQXgYobUel6O8DgSing="
     ];
   };
   outputs =
@@ -25,6 +30,7 @@
       mac-app-util,
       packageset,
       claude-code,
+      codex-cli-nix,
       ...
     }:
     let
@@ -43,6 +49,7 @@
         ];
         extraSpecialArgs = {
           inherit claude-code;
+          inherit codex-cli-nix;
           inherit (packageset.packages.${system})
             idris2
             idris2Lsp
@@ -67,6 +74,7 @@
         ];
         extraSpecialArgs = {
           inherit claude-code;
+          inherit codex-cli-nix;
           inherit (packageset.packages.${system})
             idris2
             idris2Lsp

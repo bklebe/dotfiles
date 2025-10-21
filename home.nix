@@ -5,6 +5,7 @@
   userPackages,
   extraNushellConfig,
   claude-code,
+  codex-cli-nix,
   lib,
   idris2,
   idris2Lsp,
@@ -62,6 +63,7 @@ in
       # idris2Lsp
       # idris2Packages.pack
     ]
+    ++ [ codex-cli-nix.packages.${pkgs.system}.default ]
     ++ (with pkgs; [
       # buck2 (broken)
       chezmoi
