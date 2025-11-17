@@ -63,7 +63,7 @@ in
       # idris2Lsp
       # idris2Packages.pack
     ]
-    ++ [ codex-cli-nix.packages.${pkgs.system}.default ]
+    ++ [ codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default ]
     ++ (with pkgs; [
       # buck2 (broken)
       chezmoi
