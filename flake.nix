@@ -4,6 +4,7 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       mac-app-util,
       packageset,
@@ -36,6 +38,7 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
+      stablePkgs = nixpkgs-stable.legacyPackages.${system};
     in
     {
       homeConfigurations."ada" = home-manager.lib.homeManagerConfiguration {
@@ -48,6 +51,7 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit stablePkgs;
           inherit claude-code;
           inherit codex-cli-nix;
           inherit (packageset.packages.${system})
@@ -73,6 +77,7 @@
           ./home.nix
         ];
         extraSpecialArgs = {
+          inherit stablePkgs;
           inherit claude-code;
           inherit codex-cli-nix;
           inherit (packageset.packages.${system})
