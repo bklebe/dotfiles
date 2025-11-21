@@ -101,7 +101,7 @@ in
       nixfmt-tree
       nmap
       nodejs_24
-      ollama
+      # ollama
       ouch
       pandoc
       pgformatter
